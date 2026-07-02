@@ -334,10 +334,15 @@
     .section-sub.light { color: rgba(255,255,255,0.5); }
 
     /* ─── WHAT I DO (3 cards) ─── */
-    .focus-grid {
+    /* .focus-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+    } */
+      .focus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
     }
     .focus-card {
       padding: 32px;
@@ -778,6 +783,9 @@
     .footer-links a:hover { color: var(--teal-light); }
 
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+  .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-photo-wrap { display: none; }
@@ -820,8 +828,8 @@
     <div class="hero-text">
       <div class="hero-eyebrow">Doctoral Researcher · Dalhousie University</div>
       <!-- <h1>Building software that<br/><em>works equitably for people.</em></h1> -->
-      <h1>Building the science <br/><em>behind trustworthy AI and socially sustainable software.</em></h1>
-      <p>I research how software teams can embed equity, inclusion, and human wellbeing into the products they build — and develop the tools and frameworks to make that possible.</p>
+      <h1>Building the science <br/><em>behind trustworthy AI & socially sustainable software.</em></h1>
+      <p>I research how software teams can embed equity, inclusion, and human wellbeing into the products they build, and develop the tools and frameworks to make that possible.</p>
       <div class="hero-ctas">
         <a href="#research" class="btn-primary">View My Research</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -893,7 +901,7 @@
       </div>
       <div class="focus-card reveal reveal-delay-2">
         <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5.25 3.75 9.75 9 11 5.25-1.25 9-5.75 9-11V6l-9-4z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
         <h3>AI Safety & Human AI Collaboration</h3>
         <p>I study how people and AI systems work together in high stakes settings, developing methods for AI evaluation, alignment research, and trustworthy human AI collaboration.</p>
@@ -922,7 +930,7 @@
         <p>Before my academic career, I spent nearly a decade as a software engineer and technical project manager building enterprise systems — giving me a practitioner's eye for what research actually needs to solve.</p>
         <p>I believe technology should serve everyone. That belief drives everything I do, from my research to my teaching and to my community work.</p> -->
       <h2>Researcher, educator,<br/>and <span>community builder</span></h2>
-<p>I study how software engineers make decisions that affect people, and I design ways to make those decisions better..</p>
+<p>I study how software engineers make decisions that affect people, and I design ways to make those decisions better.</p>
 <p>My research program sits at the intersection of social sustainability, responsible AI, and empirical software engineering. I build and evaluate interventions that change how developers reason about fairness, safety, and inclusion in the systems they build. I bring the same rigor to a harder, faster moving problem: AI safety. There I develop methodological standards for uplift evaluation, build evaluation pipelines, run adversarial safety testing, and design human centred AI assisted systems.</p>
 <p>Before academia, I spent nearly a decade as a software engineer and technical project manager building enterprise systems — giving me a practitioner's eye for what research actually needs to solve.</p>
       </div>
