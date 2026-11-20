@@ -102,15 +102,17 @@
     .news-item time { color: var(--muted); font-size: 15px; padding-top: 3px; }
     .news-item h3 { font-size: 20px; margin-bottom: 6px; }
     .news-item p { color: var(--ink-2); margin: 0; max-width: 58ch; }
-    .news-photo { margin: 0; width: 240px; }
-    .news-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: var(--rule); }
+    .news-photo { margin: 0; width: 280px; }
+    .news-photo img { width: 100%; height: auto; max-height: 340px; object-fit: cover; object-position: 50% 15%; border-radius: 2px; background: var(--rule); }
+    .news-photo img + img { margin-top: 8px; }
+    .news-item .more { display: inline-block; margin-top: 8px; font-size: 16px; }
     .news-photo figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
     details.older { margin-top: 20px; }
     details.older summary { cursor: pointer; color: var(--accent); font-size: 17px; }
     details.older[open] summary { margin-bottom: 20px; }
 
     /* Research */
-    .questions { counter-reset: q; margin: 8px 0 32px; }
+    .questions { counter-reset: q; margin: 8px 0 32px; padding: 0; list-style: none; }
     .questions li { counter-increment: q; display: grid; grid-template-columns: 40px 1fr; padding: 18px 0; border-bottom: 1px solid var(--rule); }
     .questions li::before { content: counter(q); font-family: var(--serif); color: var(--accent); font-size: 22px; line-height: 1.2; }
     .questions h3 { font-size: 20px; margin-bottom: 6px; }
@@ -194,9 +196,9 @@
     <div>
       <h1>Bimpe Ayoola, PhD</h1>
       <div class="role">Empirical software engineering and responsible AI · Halifax, Canada</div>
-      <p class="lead">I study how software and AI systems affect people, and I test ways to help developers prevent the harm they cause.</p>
-      <p>I completed my PhD in Computer Science at Dalhousie University in October 2026, advised by Professor Paul Ralph. My thesis tested interventions that help developers make software that is fairer and safer for the people who use it.</p>
-      <p>I now work as a Senior Software Engineer in AI evaluation at Alignerr by Labelbox. I design tasks for AI coding agents in real codebases and find where their reasoning and code fail. Before my PhD, I spent seven years building software in fintech, health and education.</p>
+      <p class="lead">I study how the software we build affects the people who use it, and what developers can do to make it fairer and safer.</p>
+      <p>I just finished my PhD in Computer Science at Dalhousie University, where I worked with Paul Ralph. Most of my research puts developers into experiments and asks a simple question. If we give them a better tool or a little training, do they make choices that hurt fewer people? In our studies, personas and short training both helped.</p>
+      <p>These days I also work on AI. At Alignerr by Labelbox, I give AI coding agents real tasks in real codebases and look for where they go wrong. Before grad school, I spent seven years shipping software in fintech, health and education. That time taught me to care about whether research holds up in practice.</p>
       <div class="links">
         <a href="mailto:bimpeayoolac@gmail.com">Email</a>
         <a href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&amp;hl=en">Google Scholar</a>
@@ -229,8 +231,8 @@
       <article class="news-item">
         <time datetime="2026-10">Oct 2026</time>
         <div>
-          <h3>I completed my PhD</h3>
-          <p>I finished the requirements for my PhD in Computer Science at Dalhousie University. Thesis: <em>Advancing Social Sustainability in Software Engineering Through Evidence-Based Interventions</em>.</p>
+          <h3>I finished my PhD</h3>
+          <p>Four years and four experiments later, I completed my PhD in Computer Science at Dalhousie University. Thesis: <em>Advancing Social Sustainability in Software Engineering Through Evidence-Based Interventions</em>.</p>
         </div>
       </article>
 
@@ -238,16 +240,21 @@
         <time datetime="2026">2026</time>
         <div>
           <h3>New role in AI evaluation</h3>
-          <p>I joined Alignerr by Labelbox as a Senior Software Engineer. I evaluate AI coding agents on multi-step software tasks for correctness, reliability and safety.</p>
+          <p>I joined Alignerr by Labelbox as a Senior Software Engineer. My job is to test AI coding agents on real software tasks and find out where they break.</p>
         </div>
       </article>
 
       <article class="news-item">
         <time datetime="2026">2026</time>
         <div>
-          <h3>Research roadmap at FSE 2026, Montreal</h3>
-          <p>I presented our roadmap for evidence-based social sustainability in software engineering in the Ideas, Visions and Reflections track.</p>
+          <h3>Our research roadmap at FSE 2026, Montreal</h3>
+          <p>Social sustainability is one of the least studied parts of sustainability in software engineering. Our roadmap sets out how the field can define it more clearly, measure it better and test what actually helps. I wrote it with Anielle Andrade, Ronnie de Souza Santos and Paul Ralph. The best part was the conversations afterward.</p>
         </div>
+        <figure class="news-photo">
+          <img src="news/2026-fse-montreal.jpg" alt="Bimpe and Paul Ralph at the front of the room, with the roadmap title slide behind them" loading="lazy" width="1200" height="1200" />
+          <img src="news/2026-fse-montreal-talk.jpg" alt="Bimpe presenting a slide titled Why social sustainability matters" loading="lazy" width="1200" height="675" />
+          <figcaption>FSE 2026, Montreal</figcaption>
+        </figure>
       </article>
 
       <article class="news-item">
@@ -277,17 +284,26 @@
       <article class="news-item">
         <time datetime="2025">2025</time>
         <div>
-          <h3>Invited talk at the Killam Trusts Annual Celebration</h3>
-          <p>I spoke about how to promote social sustainability in software development, as a Killam Predoctoral Scholar at Dalhousie University.</p>
+          <h3>Speaking at the Killam Celebration</h3>
+          <p>As a Killam scholar, I was invited to present my research at Dalhousie's annual Killam Celebration. I talked about how we can get developers to think about who their software might hurt.</p>
+          <a class="more" href="https://bit.ly/48P0kdv">Read the Dal News story</a>
         </div>
+        <figure class="news-photo">
+          <img src="news/2025-killam-celebration.jpg" alt="Bimpe on stage with three other Killam scholars" loading="lazy" width="579" height="350" />
+          <figcaption>Killam Celebration, Dalhousie University</figcaption>
+        </figure>
       </article>
 
       <article class="news-item">
         <time datetime="2025-04">Apr 2025</time>
         <div>
           <h3>ICSE 2025, Ottawa</h3>
-          <p>I presented our paper showing that user personas lead developers to give lower priority to harmful features. I also served on a panel and chaired a session at AST 2025.</p>
+          <p>I presented our paper showing that user personas lead developers to push harmful features down their priority list. I also joined a panel on testing for sustainability and chaired a session at AST 2025.</p>
         </div>
+        <figure class="news-photo">
+          <img src="news/2025-icse-ottawa.jpg" alt="Bimpe speaking at the ICSE 2025 podium in Ottawa" loading="lazy" width="480" height="544" />
+          <figcaption>ICSE 2025, Ottawa</figcaption>
+        </figure>
       </article>
 
       <details class="older">
@@ -337,35 +353,35 @@
       <h2>Research</h2>
     </div>
     <div class="body">
-      <p>My work connects empirical software engineering and responsible AI. The focus is social sustainability: how software affects equity, inclusion and well-being. Most of my studies are randomized controlled experiments with developers. I work on three questions.</p>
+      <p>Software decides who gets a loan, who sees a job ad and whose face a camera recognizes. Those outcomes start with ordinary decisions developers make every day, like which feature to build first. I study those decisions, and I test small changes that lead to better ones. Researchers call this social sustainability: how software affects equity, inclusion and well-being.</p>
 
       <ol class="questions">
         <li>
           <div>
-            <h3>What helps developers reduce social harm?</h3>
-            <p>I test interventions such as user personas, stakeholder value maps and short training programs. The participants are students and professional software engineers.</p>
+            <h3>Can we nudge developers toward less harmful software?</h3>
+            <p>I test simple tools, like user personas and stakeholder maps, that help developers notice who might get hurt by a feature.</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>How does harm enter software that AI agents write?</h3>
-            <p>AI coding agents now write a large share of new code. I study how social harm appears in that code, and how developers review, oversee and rely on the agents.</p>
+            <h3>What happens when AI writes the code?</h3>
+            <p>AI coding agents now write a lot of software. I want to know how harm slips into their code, and how well developers catch it when they review it.</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>How do we test these ideas well?</h3>
-            <p>I work on experimental methods for software engineering and AI evaluation, including guidelines for randomized trials of AI systems.</p>
+            <h3>How do we know any of this works?</h3>
+            <p>Good answers need good experiments. I work on methods for testing these ideas, including guidelines for randomized trials in AI evaluation.</p>
           </div>
         </li>
       </ol>
 
-      <p>I ran four randomized experiments with 277 participants, including 18 professional software engineers. I share data, analysis scripts and study materials on Zenodo and OSF.</p>
-
-      <div class="finding">
-        <p>In one experiment, a short training program cut the odds that developers gave high priority to harmful features by 78%.</p>
-        <p>I built LUMORA, a web version of this training, so that developers can complete it on their own.</p>
-      </div>
+      <h3 class="sub-h" style="margin-top:36px">What we have learned so far</h3>
+      <ul class="rows">
+        <li><span class="when">Personas</span><span class="what">When developers met a few realistic users first, they gave less priority to features that could harm people. <a href="#publications">ICSE 2025</a></span></li>
+        <li><span class="when">Training</span><span class="what">A short training session had a similar effect. I turned it into LUMORA, a web app that developers can work through on their own.</span></li>
+        <li><span class="when">Teams</span><span class="what">Diverse teams made fairer choices when they prioritized requirements. <a href="https://arxiv.org/abs/2603.12406">FSE 2026</a></span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -614,9 +630,9 @@
 
       <h3 class="sub-h">Students</h3>
       <ul class="rows">
-        <li><span class="when">2026</span><span class="what">Cerys Fisher, NSERC undergraduate research student (co-supervisor). Hybrid work in software teams.</span></li>
-        <li><span class="when">2024–2025</span><span class="what">Satya Deepika, master's student (mentor). Ethical conflicts in user stories in Agile development.</span></li>
-        <li><span class="when">2022–2025</span><span class="what">Felix Wang, undergraduate research assistant (mentor). Hybrid software teams.</span></li>
+        <li><span class="when">2026</span><span class="what">Co-supervised an NSERC undergraduate research student working on hybrid work in software teams.</span></li>
+        <li><span class="when">2024–2025</span><span class="what">Mentored a master's student studying ethical conflicts in Agile user stories.</span></li>
+        <li><span class="when">2022–2025</span><span class="what">Mentored an undergraduate research assistant studying hybrid software teams.</span></li>
       </ul>
     </div>
   </div>
@@ -679,7 +695,7 @@
       <h2>Contact</h2>
     </div>
     <div class="body">
-      <p>I am open to research collaborations, talks and roles in AI evaluation and responsible AI. Email is the best way to reach me.</p>
+      <p>If you work on responsible AI, human-centred software or AI evaluation, I would love to hear from you. I am always up for a collaboration, a talk or a good conversation.</p>
       <div class="links">
         <a href="mailto:bimpeayoolac@gmail.com">bimpeayoolac@gmail.com</a>
         <a href="https://www.linkedin.com/in/bimpe-ayoola-phd-61939455/">LinkedIn</a>
