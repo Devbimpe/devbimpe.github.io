@@ -68,8 +68,9 @@
     /* ---------- Hero ---------- */
     .hero { background: var(--night); color: var(--on-night); padding: 76px 0 84px; }
     .hero .wrap { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 72px; align-items: center; }
-    .hero h1 { font-size: 50px; letter-spacing: -0.01em; margin: 18px 0 22px; }
-    .hero h1 em { font-style: italic; font-weight: 400; color: var(--brass-soft); }
+    .hero h1 { font-size: 48px; letter-spacing: -0.015em; line-height: 1.15; margin: 18px 0 24px; max-width: 20ch; }
+    .hero h1 em { font-style: normal; color: inherit; }
+    .hero h1 .mark { box-shadow: inset 0 -0.12em 0 rgba(184,138,68,.6); white-space: nowrap; }
     .hero .intro { color: var(--on-night-2); font-size: 19px; max-width: 54ch; margin-bottom: 30px; }
     .btns { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn { display: inline-block; padding: 12px 22px; border-radius: 3px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid transparent; transition: background .15s, color .15s, border-color .15s; }
@@ -127,6 +128,28 @@
     .updates p { margin: 2px 0 0; font-size: 16px; color: var(--ink-2); }
     .updates p b { color: var(--ink); font-weight: 600; }
 
+    /* ---------- Awards ---------- */
+    .awards { background: var(--night); color: var(--on-night); padding: 80px 0; }
+    .awards .head h2 { color: var(--on-night); }
+    .awards .head p { color: var(--on-night-2); }
+    .big-awards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .award { background: var(--night-2); border: 1px solid var(--night-line); border-radius: 4px; padding: 26px 26px 24px; display: flex; flex-direction: column; }
+    .award .amt { font-family: var(--serif); font-weight: 600; color: var(--brass-soft); font-size: 26px; line-height: 1.1; }
+    .award .amt small { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .08em; color: var(--on-night-2); margin-left: 6px; }
+    .award h3 { font-size: 19px; color: var(--on-night); margin: 12px 0 2px; }
+    .award .src { font-size: 14px; color: var(--on-night-2); margin-bottom: 10px; }
+    .award p { font-size: 15.5px; color: var(--on-night-2); margin: 0; }
+    .award .yr { margin-top: auto; padding-top: 14px; font-size: 13px; font-weight: 600; letter-spacing: .1em; color: var(--brass); }
+    .big-awards .award { padding: 32px; border-top: 3px solid var(--brass); }
+    .big-awards .amt { font-size: 44px; }
+    .big-awards h3 { font-size: 22px; }
+    .small-awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+    .small-awards .amt.word { font-size: 20px; }
+    .also { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+    .also li { border-top: 1px solid var(--night-line); padding-top: 14px; font-size: 15.5px; color: var(--on-night-2); }
+    .also b { display: block; font-family: var(--serif); color: var(--brass-soft); font-size: 17px; }
+    .also span { color: var(--brass); font-size: 13px; font-weight: 600; letter-spacing: .1em; margin-left: 6px; }
+
     /* ---------- Publications ---------- */
     .pubs { border-top: 1px solid var(--rule); }
     .pub { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
@@ -174,7 +197,8 @@
     @media (max-width: 920px) {
       .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
       .portrait { justify-self: start; max-width: 280px; margin-left: 18px; }
-      .qgrid, .feature-grid, .updates { grid-template-columns: 1fr 1fr; }
+      .qgrid, .feature-grid, .updates, .small-awards { grid-template-columns: 1fr 1fr; }
+      .big-awards { grid-template-columns: 1fr; }
       .findings { grid-template-columns: 1fr; }
       .findings ul { grid-template-columns: 1fr; gap: 14px; }
       .two { grid-template-columns: 1fr; }
@@ -190,7 +214,9 @@
       section.block { padding: 56px 0; }
       .head { display: block; }
       .head h2 { font-size: 28px; }
-      .qgrid, .feature-grid, .updates { grid-template-columns: 1fr; }
+      .qgrid, .feature-grid, .updates, .small-awards, .also { grid-template-columns: 1fr; }
+      .awards { padding: 56px 0; }
+      .big-awards .amt { font-size: 36px; }
       .pub, .rows li { grid-template-columns: 1fr; gap: 6px; }
       .contact .wrap { grid-template-columns: 1fr; }
     }
@@ -204,6 +230,7 @@
     <nav aria-label="Sections">
       <a href="#research">Research</a>
       <a href="#news">News</a>
+      <a href="#awards">Awards</a>
       <a href="#publications">Publications</a>
       <a href="#background">Background</a>
       <a href="#contact">Contact</a>
@@ -218,15 +245,15 @@
   <div class="wrap">
     <div>
       <div class="eyebrow">Research Scientist · PhD, Computer Science</div>
-      <h1>Building the science behind <em>trustworthy AI &amp; socially sustainable software.</em></h1>
-      <p class="intro">I study how software and AI systems affect the people who use them. I design experiments that test practical ways to help developers build technology that is fairer, safer and more inclusive.</p>
+      <h1>Building the science behind <span class="mark">trustworthy AI</span> and socially sustainable software.</h1>
+      <p class="intro">AI coding agents are changing how software is built, including the systems people rely on for health care, finance and public services. I study how to make that software safe to trust. My experiments test what helps developers catch safety, reliability and fairness risks before they reach the public.</p>
       <div class="btns">
         <a class="btn btn-solid" href="#research">View my research</a>
         <a class="btn btn-line" href="#contact">Get in touch</a>
       </div>
       <div class="creds">
         <span>PhD, Dalhousie University</span>
-        <span>Killam Predoctoral Scholar</span>
+        <span>Killam Predoctoral Scholar, 2023–2026</span>
         <span>Published at ICSE, FSE and ICML</span>
       </div>
     </div>
@@ -299,7 +326,7 @@
         <div class="body">
           <time datetime="2026">2026 · Montreal</time>
           <h3>A research roadmap for social sustainability</h3>
-          <p>With Anielle Andrade, Ronnie de Souza Santos and Paul Ralph, I set out how the field can define social sustainability, measure it and test what helps.</p>
+          <p>I led and presented a roadmap for how software engineering can define social sustainability, measure it and test what actually helps.</p>
         </div>
       </article>
 
@@ -336,6 +363,87 @@
       <li><time datetime="2026">2026</time><p><b>Program committee</b> for the ICSE 2027 Software Engineering in Society track.</p></li>
       <li><time datetime="2025-09">Sep 2025</time><p><b>SPAR AI Safety Research Fellow</b>, working with an international team on AI evaluation methods.</p></li>
       <li><time datetime="2025-08">Aug 2025</time><p><b>Digital Discovery Camp.</b> I led a Python and chatbot workshop for young people in Halifax.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards" id="awards">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Awards and funding</div>
+        <h2>$186,000 in competitive doctoral funding</h2>
+        <p>The Killam Predoctoral Award and the Nova Scotia Graduate Scholarship funded my doctoral research. I also received fellowships, scholarships and travel awards.</p>
+      </div>
+    </div>
+
+    <div class="big-awards">
+      <div class="award">
+        <div class="amt">$126,000<small>CAD</small></div>
+        <h3>Killam Predoctoral Award</h3>
+        <div class="src">Killam Trusts</div>
+        <p>One of Canada's most prestigious doctoral awards. It recognizes academic and research excellence and is offered competitively across five Canadian universities.</p>
+        <div class="yr">2023–2026</div>
+      </div>
+      <div class="award">
+        <div class="amt">$60,000<small>CAD</small></div>
+        <h3>Nova Scotia Graduate Scholarship</h3>
+        <div class="src">Province of Nova Scotia</div>
+        <p>Awarded for academic excellence at the doctoral level.</p>
+        <div class="yr">2022–2026</div>
+      </div>
+    </div>
+
+    <div class="small-awards">
+      <div class="award">
+        <div class="amt word">Awarded</div>
+        <h3>NSERC Discovery Grant</h3>
+        <div class="src">RGPIN-2026-07174 · PI: Professor Paul Ralph</div>
+        <p>I contributed to the proposal and research design.</p>
+        <div class="yr">2026</div>
+      </div>
+      <div class="award">
+        <div class="amt word">Fellowship</div>
+        <h3>AI Safety Research Fellowship</h3>
+        <div class="src">Supervised Program for Alignment Research (SPAR)</div>
+        <p>Selected through a competitive process for a three-month AI safety research program.</p>
+        <div class="yr">2025–2026</div>
+      </div>
+      <div class="award">
+        <div class="amt">$3,000<small>CAD</small></div>
+        <h3>OpenThink Scholarship</h3>
+        <div class="src">Dalhousie University</div>
+        <p>One of 16 doctoral students selected for training in policy and media writing on AI ethics, digital inequality and sustainability.</p>
+        <div class="yr">2024</div>
+      </div>
+      <div class="award">
+        <div class="amt">$3,000<small>CAD</small></div>
+        <h3>Ada Byron Award</h3>
+        <div class="src">Dalhousie Faculty of Computer Science</div>
+        <p>Recognizes academic excellence and contributions to women in computing.</p>
+        <div class="yr">2023</div>
+      </div>
+      <div class="award">
+        <div class="amt">$1,800<small>USD</small></div>
+        <h3>ACM SIGSOFT CAPS Award, twice</h3>
+        <div class="src">ACM SIGSOFT</div>
+        <p>Travel support to present at ICSE 2025 in Ottawa and ICSE 2026.</p>
+        <div class="yr">2025, 2026</div>
+      </div>
+      <div class="award">
+        <div class="amt">$500<small>USD</small></div>
+        <h3>ComSciCon Flagship Award</h3>
+        <div class="src">ComSciCon</div>
+        <p>Selected for the national science communication workshop for graduate students.</p>
+        <div class="yr">2024</div>
+      </div>
+    </div>
+
+    <ul class="also">
+      <li><b>$700 CAD</b> Winner, Halifax Innovation Challenge, IBM and RBC <span>2021</span></li>
+      <li><b>Entrance award</b> Dalhousie Graduate Scholarship <span>2022</span></li>
+      <li><b>Grant</b> Dalhousie Conference on University Teaching and Learning <span>2025</span></li>
     </ul>
   </div>
 </section>
@@ -464,7 +572,7 @@
     <div class="head">
       <div>
         <div class="eyebrow">Background</div>
-        <h2>Experience, teaching and recognition</h2>
+        <h2>Experience, teaching and service</h2>
       </div>
     </div>
 
@@ -472,7 +580,6 @@
       <button role="tab" id="t-exp" aria-controls="p-exp" aria-selected="true">Experience</button>
       <button role="tab" id="t-teach" aria-controls="p-teach" aria-selected="false" tabindex="-1">Teaching</button>
       <button role="tab" id="t-talks" aria-controls="p-talks" aria-selected="false" tabindex="-1">Talks</button>
-      <button role="tab" id="t-awards" aria-controls="p-awards" aria-selected="false" tabindex="-1">Awards</button>
       <button role="tab" id="t-service" aria-controls="p-service" aria-selected="false" tabindex="-1">Service</button>
     </div>
 
@@ -513,25 +620,6 @@
         <li><span class="when">2025</span><span class="what"><b>Addressing the Social Costs of Our Digital World in Software Development.</b> Three-Minute Thesis, Dalhousie University.</span></li>
         <li><span class="when">2023</span><span class="what"><b>Sustainability is Stratified.</b> ICSE, Melbourne. Also a doctoral symposium poster.</span></li>
       </ul>
-    </div>
-
-    <div class="panel" id="p-awards" role="tabpanel" aria-labelledby="t-awards" hidden>
-      <div class="two">
-        <ul class="rows">
-          <li><span class="when">2023–2026</span><span class="what"><b>Killam Predoctoral Award</b>, Killam Trusts. $126,000 CAD.</span></li>
-          <li><span class="when">2022–2026</span><span class="what"><b>Nova Scotia Graduate Scholarship.</b> $60,000 CAD.</span></li>
-          <li><span class="when">2026</span><span class="what"><b>NSERC Discovery Grant</b>, contributor. PI: Professor Paul Ralph.</span></li>
-          <li><span class="when">2025–2026</span><span class="what"><b>AI Safety Research Fellowship</b>, SPAR.</span></li>
-          <li><span class="when">2025, 2026</span><span class="what"><b>ACM SIGSOFT CAPS Award</b> for ICSE 2025 and ICSE 2026.</span></li>
-        </ul>
-        <ul class="rows">
-          <li><span class="when">2024</span><span class="what"><b>OpenThink Scholarship</b>, Dalhousie. One of 16 doctoral students.</span></li>
-          <li><span class="when">2024</span><span class="what"><b>ComSciCon Flagship Award</b>, science communication.</span></li>
-          <li><span class="when">2023</span><span class="what"><b>Ada Byron Award</b>, Dalhousie Faculty of Computer Science.</span></li>
-          <li><span class="when">2022</span><span class="what"><b>Dalhousie Graduate Scholarship.</b></span></li>
-          <li><span class="when">2021</span><span class="what"><b>Winner, Halifax Innovation Challenge</b>, IBM and RBC.</span></li>
-        </ul>
-      </div>
     </div>
 
     <div class="panel" id="p-service" role="tabpanel" aria-labelledby="t-service" hidden>
