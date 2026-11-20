@@ -186,6 +186,12 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
     .panel h4 { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 28px 0 0; padding-bottom: 4px; }
 
+    /* Skills */
+    .skills { margin: 8px 0 0; display: grid; grid-template-columns: 180px 1fr; }
+    .skills dt { font-size: 15px; font-weight: 600; color: var(--ink); padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .skills dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px; }
+    .skills dd span { font-size: 14.5px; color: var(--ink-2); background: var(--bg); border: 1px solid var(--rule); padding: 3px 11px; border-radius: 999px; }
+
     /* Contact */
     .contact { padding: 64px 0; border-top: 1px solid var(--rule); }
     .contact .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
@@ -222,6 +228,8 @@
       .feature-grid .card.big .media { aspect-ratio: 4 / 3; }
       .big-awards .amt { font-size: 34px; }
       .pub, .rows li { grid-template-columns: 1fr; gap: 6px; }
+      .skills { grid-template-columns: 1fr; }
+      .skills dt { border-bottom: 0; padding-bottom: 0; }
       .contact .wrap { grid-template-columns: 1fr; }
     }
   </style>
@@ -320,12 +328,37 @@
     <div class="head">
       <div>
         <div class="eyebrow">News</div>
-        <h2>Recent talks and milestones</h2>
+        <h2>News and milestones</h2>
       </div>
     </div>
 
     <div class="feature-grid">
       <article class="card big">
+        <div class="media">
+          <img src="news/2026-phd-defense.jpg" alt="Bimpe holding flowers and her laptop after her PhD thesis defense at Dalhousie" loading="lazy" style="object-position:60% 15%" />
+          <span class="tag">PhD defense</span>
+        </div>
+        <div class="body">
+          <time datetime="2026-09">September 2026 · Dalhousie University</time>
+          <h3>I defended my PhD</h3>
+          <p>My thesis tested evidence-based interventions that help software developers anticipate and reduce the social harms of what they build.</p>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2026-icml-poster.jpg" alt="Top of the ICML 2026 poster: Principles and Guidelines for Randomized Controlled Trials in AI Evaluation" loading="lazy" style="object-position:50% 0%" />
+          <span class="tag">ICML 2026</span>
+        </div>
+        <div class="body">
+          <time datetime="2026">2026 · TAIGR Workshop</time>
+          <h3>Guidelines for randomized trials in AI evaluation</h3>
+          <p>Unreliable AI evaluations produce unreliable policy. With an international team, we built a framework of 5 principles and 33 guidelines for AI evaluation trials that produce credible, repeatable evidence.</p>
+          <a class="more" href="news/2026-icml-poster.jpg">View the poster</a>
+        </div>
+      </article>
+
+      <article class="card">
         <div class="media">
           <img src="news/2026-fse-montreal.jpg" alt="Bimpe and Paul Ralph presenting the research roadmap at FSE 2026" loading="lazy" style="object-position:50% 45%" />
           <span class="tag">FSE 2026</span>
@@ -337,7 +370,7 @@
         </div>
       </article>
 
-      <article class="card big">
+      <article class="card">
         <div class="media">
           <img src="news/2025-ast-panel.jpg" alt="Bimpe speaking on the AST 2025 panel, with the panelists listed on the screen behind" loading="lazy" style="object-position:50% 62%" />
           <span class="tag">Invited panel</span>
@@ -362,7 +395,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card big">
         <div class="media">
           <img src="news/2025-killam-celebration.jpg" alt="Bimpe on stage with three other Killam scholars" loading="lazy" />
           <span class="tag">Invited talk</span>
@@ -375,7 +408,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card big">
         <div class="media">
           <img src="news/2024-comscicon-boston.jpg" alt="Bimpe in a ComSciCon Flagship 2024 shirt on a street in Boston" loading="lazy" style="object-position:50% 30%" />
           <span class="tag">ComSciCon 2024</span>
@@ -390,11 +423,11 @@
     </div>
 
     <ul class="updates">
-      <li><time datetime="2026-10">Oct 2026</time><p><b>PhD completed</b> at Dalhousie University, on evidence-based interventions for social sustainability.</p></li>
-      <li><time datetime="2026">2026</time><p><b>ICML 2026 workshop paper</b> on principles and guidelines for randomized controlled trials in AI evaluation.</p></li>
       <li><time datetime="2026">2026</time><p><b>NSERC Discovery Grant</b> awarded to Professor Paul Ralph (PI). I helped develop the proposal and research design.</p></li>
+      <li><time datetime="2026">2026</time><p><b>Program committee</b> for the ICSE 2027 Software Engineering in Society track.</p></li>
       <li><time datetime="2025-09">Sep 2025</time><p><b>SPAR AI Safety Research Fellow</b>, working with an international team on AI evaluation methods.</p></li>
       <li><time datetime="2025-08">Aug 2025</time><p><b>Digital Discovery Camp.</b> Digital Nova Scotia invited me to lead a Python and chatbot workshop for young people in Halifax. <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7359244464428654594/">See the feature</a></p></li>
+      <li><time datetime="2025">2025</time><p><b>Three-Minute Thesis.</b> I competed at Dalhousie with a talk on the social costs of our digital world.</p></li>
       <li><time datetime="2024-03">Mar 2024</time><p><b>OpenThink 2024 cohort.</b> I was one of 16 Dalhousie PhD students selected to share research with communities beyond the university. <a href="https://www.dal.ca/news/2024/03/08/dalhousie-openthink-2024.html">Read the announcement</a></p></li>
     </ul>
   </div>
@@ -659,7 +692,7 @@
     <div class="head">
       <div>
         <div class="eyebrow">Background</div>
-        <h2>Experience, teaching and service</h2>
+        <h2>Experience, teaching, service and skills</h2>
       </div>
     </div>
 
@@ -668,6 +701,7 @@
       <button role="tab" id="t-teach" aria-controls="p-teach" aria-selected="false" tabindex="-1">Teaching</button>
       <button role="tab" id="t-talks" aria-controls="p-talks" aria-selected="false" tabindex="-1">Talks</button>
       <button role="tab" id="t-service" aria-controls="p-service" aria-selected="false" tabindex="-1">Service</button>
+      <button role="tab" id="t-skills" aria-controls="p-skills" aria-selected="false" tabindex="-1">Skills</button>
     </div>
 
     <div class="panel" id="p-exp" role="tabpanel" aria-labelledby="t-exp">
@@ -730,6 +764,21 @@
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="panel" id="p-skills" role="tabpanel" aria-labelledby="t-skills" hidden>
+      <dl class="skills">
+        <dt>Research methods</dt>
+        <dd><span>Randomized controlled experiments</span><span>AI evaluation</span><span>Experimental design</span><span>Mixed methods</span><span>Survey and interview design</span><span>Qualitative analysis</span><span>Research ethics</span></dd>
+        <dt>Statistics</dt>
+        <dd><span>Ordinal logistic regression</span><span>Cumulative link mixed models</span><span>Mixed-effects models</span><span>ANOVA</span></dd>
+        <dt>Domains</dt>
+        <dd><span>AI safety</span><span>Responsible AI</span><span>Social sustainability in software engineering</span><span>Empirical software engineering</span><span>AI ethics and governance</span><span>Sociotechnical systems</span></dd>
+        <dt>Languages and tools</dt>
+        <dd><span>Python</span><span>R</span><span>Java</span><span>JavaScript and TypeScript</span><span>React</span><span>Inspect AI</span><span>PyRIT</span><span>Hugging Face</span><span>Docker</span><span>Git</span><span>LaTeX</span><span>Qualtrics</span><span>NVivo</span></dd>
+        <dt>Communication</dt>
+        <dd><span>Research writing</span><span>Policy writing</span><span>Public speaking</span><span>Science communication</span><span>Stakeholder engagement</span></dd>
+      </dl>
     </div>
   </div>
 </section>
