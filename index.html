@@ -92,6 +92,10 @@
     .head p { color: var(--ink-2); max-width: 62ch; margin: 10px 0 0; }
 
     /* Research */
+    .research { display: grid; grid-template-columns: 260px 1fr; gap: 56px; }
+    .research h2 { font-size: 30px; margin-top: 6px; }
+    .prose p { color: var(--ink-2); font-size: 17.5px; max-width: 68ch; }
+    .prose p:last-child { margin-bottom: 0; }
     .qgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .q { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 24px; }
     .q .num { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 2px 9px; border-radius: 999px; margin-bottom: 12px; }
@@ -228,6 +232,7 @@
       .feature-grid .card.big .media { aspect-ratio: 4 / 3; }
       .big-awards .amt { font-size: 34px; }
       .pub, .rows li { grid-template-columns: 1fr; gap: 6px; }
+      .research { grid-template-columns: 1fr; gap: 16px; }
       .skills { grid-template-columns: 1fr; }
       .skills dt { border-bottom: 0; padding-bottom: 0; }
       .contact .wrap { grid-template-columns: 1fr; }
@@ -241,8 +246,8 @@
     <a class="name" href="#">Bimpe Ayoola, PhD</a>
     <nav aria-label="Sections">
       <a href="#research">Research</a>
-      <a href="#news">News</a>
       <a href="#publications">Publications</a>
+      <a href="#news">News</a>
       <a href="#background">Experience</a>
       <a href="#awards">Awards</a>
       <a href="#writing">Writing</a>
@@ -265,7 +270,7 @@
     <div>
       <div class="eyebrow">Research Scientist · PhD, Computer Science</div>
       <h1>Building the science behind <span class="mark">trustworthy AI</span> and socially sustainable software.</h1>
-      <p class="intro">AI coding agents are changing how software is built, including the systems people rely on for health care, finance and public services. I study how to make that software safe to trust. My experiments test what helps developers catch safety, reliability and fairness risks before they reach the public.</p>
+      <p class="intro">AI coding agents are changing how software is built, including the systems people rely on for healthcare, finance and public services. I study how to make that software safe and fair for the people who use it. I develop and test interventions that help developers recognize and prevent harms, such as unfair treatment and barriers to access, before their software reaches the public.</p>
       <div class="btns">
         <a class="btn btn-solid" href="#research">View my research</a>
         <a class="btn btn-line" href="#contact">Get in touch</a>
@@ -281,161 +286,22 @@
 
 <!-- RESEARCH -->
 <section class="block" id="research">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="eyebrow">Research</div>
-        <h2>Three questions drive my work</h2>
-        <p>Software decides who gets a loan, who sees a job ad and whose face a camera recognizes. Those outcomes start with everyday decisions developers make. I study those decisions and test ways to improve them.</p>
-      </div>
+  <div class="wrap research">
+    <div>
+      <div class="eyebrow">Research</div>
+      <h2>What I work on</h2>
     </div>
-
-    <div class="qgrid">
-      <div class="q">
-        <div class="num">01</div>
-        <h3>Can we nudge developers toward less harmful software?</h3>
-        <p>I test simple tools, like user personas and stakeholder maps, that help developers notice who a feature might hurt.</p>
-      </div>
-      <div class="q">
-        <div class="num">02</div>
-        <h3>What happens when AI writes the code?</h3>
-        <p>AI coding agents now write a lot of software. I study how harm slips into their code, and how well developers catch it in review.</p>
-      </div>
-      <div class="q">
-        <div class="num">03</div>
-        <h3>How do we know any of this works?</h3>
-        <p>Good answers need good experiments. I work on methods for testing interventions and AI systems, including guidelines for randomized trials in AI evaluation.</p>
-      </div>
+    <div class="prose">
+      <p>I study how software engineers make decisions that affect the people who use their software, and I design ways to make those decisions better. My research brings together social sustainability, responsible AI and empirical software engineering.</p>
+      <p>During my PhD, I developed and tested interventions, including user personas, stakeholder maps and structured training, that help developers recognize who a feature might harm and give harmful features lower priority. I evaluated them in randomized controlled experiments with students and professionals.</p>
+      <p>I now bring the same focus to AI safety. AI coding agents write a growing share of software, so I study how harm enters their code, how well developers catch it in review, and how to reduce these risks before they reach people. I also work to make AI evaluation more rigorous, including guidelines for randomized controlled trials in AI evaluation.</p>
+      <p>Before academia, I spent seven years as a software engineer and technical project manager building enterprise systems. That work gave me a practitioner's eye for the problems research needs to solve.</p>
     </div>
-
-    <div class="findings">
-      <h3>What we have learned so far</h3>
-      <ul>
-        <li><b>Personas help</b>Developers who first met a few realistic users gave less priority to harmful features. <a href="#publications">ICSE 2025</a></li>
-        <li><b>So does training</b>A short training session had a similar effect. I turned it into LUMORA, a web app developers can take on their own.</li>
-        <li><b>Diverse teams decide more fairly</b>Diverse teams made fairer choices when they prioritized requirements. <a href="https://arxiv.org/abs/2603.12406">FSE 2026</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- NEWS
-     To add a featured story, copy one <article class="card"> block.
-     Put the photo in the "news" folder. Landscape photos work best.
--->
-<section class="block alt" id="news">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="eyebrow">News</div>
-        <h2>News and milestones</h2>
-      </div>
-    </div>
-
-    <div class="feature-grid">
-      <article class="card big">
-        <div class="media">
-          <img src="news/2026-phd-defense.jpg" alt="Bimpe holding flowers and her laptop after her PhD thesis defense at Dalhousie" loading="lazy" style="object-position:60% 15%" />
-          <span class="tag">PhD defense</span>
-        </div>
-        <div class="body">
-          <time datetime="2026-09">September 2026 · Dalhousie University</time>
-          <h3>I defended my PhD!</h3>
-          <p>My thesis tested evidence-based interventions that help software developers anticipate and reduce the social harms of what they build.</p>
-        </div>
-      </article>
-
-      <article class="card big">
-        <div class="media">
-          <img src="news/2026-icml-poster.jpg" alt="Top of the ICML 2026 poster: Principles and Guidelines for Randomized Controlled Trials in AI Evaluation" loading="lazy" style="object-position:50% 0%" />
-          <span class="tag">ICML 2026</span>
-        </div>
-        <div class="body">
-          <time datetime="2026">2026 · TAIGR Workshop</time>
-          <h3>Guidelines for randomized trials in AI evaluation</h3>
-          <p>Unreliable AI evaluations produce unreliable policy. With an international team, we built a framework of 5 principles and 33 guidelines for AI evaluation trials that produce credible, repeatable evidence. It was one of AI Standards Lab's ICML 2026 posters.</p>
-          <a class="more" href="https://www.linkedin.com/posts/aisl-icml-2026-posters-ugcPost-7501202127332044800-enm7/">Read more here</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="news/2026-fse-montreal.jpg" alt="Bimpe and Paul Ralph presenting the research roadmap at FSE 2026" loading="lazy" style="object-position:50% 45%" />
-          <span class="tag">FSE 2026</span>
-        </div>
-        <div class="body">
-          <time datetime="2026">2026 · Montreal</time>
-          <h3>A research roadmap for social sustainability</h3>
-          <p>I led and presented a roadmap for how software engineering can define social sustainability, measure it and test what actually helps.</p>
-          <a class="more" href="https://www.linkedin.com/posts/bimpe-ayoola-phd-61939455_fse2026-softwareengineering-socialsustainability-ugcPost-7480305870007062528-sfNT/">Read more here</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="news/2025-ast-panel.jpg" alt="Bimpe speaking on the AST 2025 panel, with the panelists listed on the screen behind" loading="lazy" style="object-position:50% 62%" />
-          <span class="tag">Invited panel</span>
-        </div>
-        <div class="body">
-          <time datetime="2025-04">2025 · Ottawa</time>
-          <h3>Panelist at AST 2025</h3>
-          <p>I was invited to speak on a panel about automated software testing for sustainability and resource efficiency, co-located with ICSE 2025. I also chaired a session at the conference.</p>
-          <a class="more" href="https://lnkd.in/p/gj9EBFh5">See the post</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="news/2025-icse-ottawa.jpg" alt="Bimpe speaking at the ICSE 2025 podium in Ottawa" loading="lazy" style="object-position:50% 12%" />
-          <span class="tag">ICSE 2025</span>
-        </div>
-        <div class="body">
-          <time datetime="2025-04">2025 · Ottawa</time>
-          <h3>User personas and harmful features</h3>
-          <p>I presented evidence that personas lead developers to push harmful features down their priority list.</p>
-        </div>
-      </article>
-
-      <article class="card big">
-        <div class="media">
-          <img src="news/2025-killam-celebration.jpg" alt="Bimpe on stage with three other Killam scholars" loading="lazy" />
-          <span class="tag">Invited talk</span>
-        </div>
-        <div class="body">
-          <time datetime="2025">2025 · Dalhousie University</time>
-          <h3>Speaking at the Killam Celebration</h3>
-          <p>As a Killam scholar, I presented my research on social sustainability in software development.</p>
-          <a class="more" href="https://bit.ly/48P0kdv">Read the Dal News story</a>
-        </div>
-      </article>
-
-      <article class="card big">
-        <div class="media">
-          <img src="news/2024-comscicon-boston.jpg" alt="Bimpe in a ComSciCon Flagship 2024 shirt on a street in Boston" loading="lazy" style="object-position:50% 30%" />
-          <span class="tag">ComSciCon 2024</span>
-        </div>
-        <div class="body">
-          <time datetime="2024">2024 · Boston</time>
-          <h3>Learning to communicate science</h3>
-          <p>I was selected for the ComSciCon Flagship workshop and wrote about what it taught me on sharing research beyond the lab.</p>
-          <a class="more" href="https://blogs.dal.ca/openthink/communicating-science-beyond-the-lab-reflections-from-comscicon-2024/">Read my reflection</a>
-        </div>
-      </article>
-    </div>
-
-    <ul class="updates">
-      <li><time datetime="2026">2026</time><p><b>NSERC Discovery Grant</b> awarded to Professor Paul Ralph (PI). I helped develop the proposal and research design.</p></li>
-      <li><time datetime="2026">2026</time><p><b>Program committee</b> for the ICSE 2027 Software Engineering in Society track.</p></li>
-      <li><time datetime="2025-09">Sep 2025</time><p><b>SPAR AI Safety Research Fellow</b>, working with an international team on AI evaluation methods.</p></li>
-      <li><time datetime="2025-08">Aug 2025</time><p><b>Digital Discovery Camp.</b> Digital Nova Scotia invited me to lead a Python and chatbot workshop for young people in Halifax. <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7359244464428654594/">See the feature</a></p></li>
-      <li><time datetime="2025">2025</time><p><b>Three-Minute Thesis.</b> I competed at Dalhousie with a talk on the social costs of our digital world.</p></li>
-      <li><time datetime="2024-03">Mar 2024</time><p><b>OpenThink 2024 cohort.</b> I was one of 16 Dalhousie PhD students selected to share research with communities beyond the university. <a href="https://www.dal.ca/news/2024/03/08/dalhousie-openthink-2024.html">Read the announcement</a></p></li>
-    </ul>
   </div>
 </section>
 
 <!-- PUBLICATIONS -->
-<section class="block" id="publications">
+<section class="block alt" id="publications">
   <div class="wrap">
     <div class="head">
       <div>
@@ -552,13 +418,128 @@
   </div>
 </section>
 
+<!-- NEWS
+     To add a featured story, copy one <article class="card"> block.
+     Put the photo in the "news" folder. Landscape photos work best.
+-->
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">News</div>
+        <h2>News and milestones</h2>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <article class="card big">
+        <div class="media">
+          <img src="news/2026-phd-defense.jpg" alt="Bimpe holding flowers and her laptop after her PhD thesis defense at Dalhousie" loading="lazy" style="object-position:60% 15%" />
+          <span class="tag">PhD defense</span>
+        </div>
+        <div class="body">
+          <time datetime="2026-09">September 2026 · Dalhousie University</time>
+          <h3>I defended my PhD!</h3>
+          <p>My thesis tested evidence-based interventions that help software developers anticipate and reduce the social harms of what they build.</p>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2026-icml-poster.jpg" alt="Top of the ICML 2026 poster: Principles and Guidelines for Randomized Controlled Trials in AI Evaluation" loading="lazy" style="object-position:50% 0%" />
+          <span class="tag">ICML 2026</span>
+        </div>
+        <div class="body">
+          <time datetime="2026">2026 · TAIGR Workshop</time>
+          <h3>Guidelines for randomized trials in AI evaluation</h3>
+          <p>Unreliable AI evaluations produce unreliable policy. With an international team, we built a framework of 5 principles and 33 guidelines for AI evaluation trials that produce credible, repeatable evidence. It was one of AI Standards Lab's ICML 2026 posters.</p>
+          <a class="more" href="https://www.linkedin.com/posts/aisl-icml-2026-posters-ugcPost-7501202127332044800-enm7/">Read more here</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2026-fse-montreal.jpg" alt="Bimpe and Paul Ralph presenting the research roadmap at FSE 2026" loading="lazy" style="object-position:50% 45%" />
+          <span class="tag">FSE 2026</span>
+        </div>
+        <div class="body">
+          <time datetime="2026">2026 · Montreal</time>
+          <h3>A research roadmap for social sustainability</h3>
+          <p>I led and presented a roadmap for how software engineering can define social sustainability, measure it and test what actually helps.</p>
+          <a class="more" href="https://www.linkedin.com/posts/bimpe-ayoola-phd-61939455_fse2026-softwareengineering-socialsustainability-ugcPost-7480305870007062528-sfNT/">Read more here</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2025-ast-panel.jpg" alt="Bimpe speaking on the AST 2025 panel, with the panelists listed on the screen behind" loading="lazy" style="object-position:50% 62%" />
+          <span class="tag">Invited panel</span>
+        </div>
+        <div class="body">
+          <time datetime="2025-04">2025 · Ottawa</time>
+          <h3>Panelist at AST 2025</h3>
+          <p>I was invited to speak on a panel about automated software testing for sustainability and resource efficiency, co-located with ICSE 2025. I also chaired a session at the conference.</p>
+          <a class="more" href="https://lnkd.in/p/gj9EBFh5">See the post</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2025-icse-ottawa.jpg" alt="Bimpe speaking at the ICSE 2025 podium in Ottawa" loading="lazy" style="object-position:50% 12%" />
+          <span class="tag">ICSE 2025</span>
+        </div>
+        <div class="body">
+          <time datetime="2025-04">2025 · Ottawa</time>
+          <h3>User personas and harmful features</h3>
+          <p>I presented evidence that personas lead developers to push harmful features down their priority list.</p>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2025-killam-celebration.jpg" alt="Bimpe on stage with three other Killam scholars" loading="lazy" />
+          <span class="tag">Invited talk</span>
+        </div>
+        <div class="body">
+          <time datetime="2025">2025 · Dalhousie University</time>
+          <h3>Speaking at the Killam Celebration</h3>
+          <p>As a Killam scholar, I presented my research on social sustainability in software development.</p>
+          <a class="more" href="https://bit.ly/48P0kdv">Read the Dal News story</a>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2024-comscicon-boston.jpg" alt="Bimpe in a ComSciCon Flagship 2024 shirt on a street in Boston" loading="lazy" style="object-position:50% 30%" />
+          <span class="tag">ComSciCon 2024</span>
+        </div>
+        <div class="body">
+          <time datetime="2024">2024 · Boston</time>
+          <h3>Learning to communicate science</h3>
+          <p>I was selected for the ComSciCon Flagship workshop and wrote about what it taught me on sharing research beyond the lab.</p>
+          <a class="more" href="https://blogs.dal.ca/openthink/communicating-science-beyond-the-lab-reflections-from-comscicon-2024/">Read my reflection</a>
+        </div>
+      </article>
+    </div>
+
+    <ul class="updates">
+      <li><time datetime="2026">2026</time><p><b>NSERC Discovery Grant</b> awarded to Professor Paul Ralph (PI). I helped develop the proposal and research design.</p></li>
+      <li><time datetime="2026">2026</time><p><b>Program committee</b> for the ICSE 2027 Software Engineering in Society track.</p></li>
+      <li><time datetime="2025-09">Sep 2025</time><p><b>SPAR AI Safety Research Fellow</b>, working with an international team on AI evaluation methods.</p></li>
+      <li><time datetime="2025-08">Aug 2025</time><p><b>Digital Discovery Camp.</b> Digital Nova Scotia invited me to lead a Python and chatbot workshop for young people in Halifax. <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7359244464428654594/">See the feature</a></p></li>
+      <li><time datetime="2025">2025</time><p><b>Three-Minute Thesis.</b> I competed at Dalhousie with a talk on the social costs of our digital world.</p></li>
+      <li><time datetime="2024-03">Mar 2024</time><p><b>OpenThink 2024 cohort.</b> I was one of 16 Dalhousie PhD students selected to share research with communities beyond the university. <a href="https://www.dal.ca/news/2024/03/08/dalhousie-openthink-2024.html">Read the announcement</a></p></li>
+    </ul>
+  </div>
+</section>
+
 <!-- BACKGROUND (tabs) -->
 <section class="block alt" id="background">
   <div class="wrap">
     <div class="head">
       <div>
         <div class="eyebrow">Background</div>
-        <h2>Experience, teaching, service and skills</h2>
+        <h2>Experience, teaching and education</h2>
       </div>
     </div>
 
@@ -568,6 +549,7 @@
       <button role="tab" id="t-talks" aria-controls="p-talks" aria-selected="false" tabindex="-1">Talks</button>
       <button role="tab" id="t-service" aria-controls="p-service" aria-selected="false" tabindex="-1">Service</button>
       <button role="tab" id="t-skills" aria-controls="p-skills" aria-selected="false" tabindex="-1">Skills</button>
+      <button role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false" tabindex="-1">Education</button>
     </div>
 
     <div class="panel" id="p-exp" role="tabpanel" aria-labelledby="t-exp">
@@ -577,12 +559,6 @@
         <li><span class="when">2026–now</span><div><h3>Senior Software Engineer, AI Evaluation</h3><div class="org">Alignerr by Labelbox</div><p>Design evaluation tasks and grading criteria for AI coding agents working in real codebases. Judge their output for correctness, reliability, code quality and safety.</p></div></li>
         <li><span class="when">2023–2026</span><div><h3>Research Assistant, equity in STEM</h3><div class="org">RBC Securing Black Futures Project · Black Epistemologies Project, University of Calgary</div><p>Designed surveys and interviews and analyzed data on the barriers Black students face in STEM education and careers in Nova Scotia.</p></div></li>
         <li><span class="when">2014–2021</span><div><h3>Technical Project Manager and Software Engineer</h3><div class="org">Longbridge Technologies, Code Garage Africa, Wellviser, Gen Financial</div><p>Led software projects in fintech, health and education from requirements to deployment. Built backend services and APIs with Agile teams and mentored junior developers.</p></div></li>
-      </ul>
-      <h4>Education</h4>
-      <ul class="rows">
-        <li><span class="when">2022–2026</span><span class="what"><b>PhD, Computer Science</b>, Dalhousie University. Advisor: Professor Paul Ralph.</span></li>
-        <li><span class="when">2021–2022</span><span class="what"><b>Master of Computer Science</b>, Dalhousie University. Transferred to the PhD.</span></li>
-        <li><span class="when">2010–2015</span><span class="what"><b>BTech, Computer Science</b>, Federal University of Technology, Akure. Best graduating student in the department.</span></li>
       </ul>
     </div>
 
@@ -645,6 +621,14 @@
         <dt>Communication</dt>
         <dd><span>Research writing</span><span>Policy writing</span><span>Public speaking</span><span>Science communication</span><span>Stakeholder engagement</span></dd>
       </dl>
+    </div>
+
+    <div class="panel" id="p-edu" role="tabpanel" aria-labelledby="t-edu" hidden>
+      <ul class="rows">
+        <li><span class="when">2022–2026</span><span class="what"><b>PhD, Computer Science</b>, Dalhousie University. Advisor: Professor Paul Ralph.</span></li>
+        <li><span class="when">2021–2022</span><span class="what"><b>Master of Computer Science</b>, Dalhousie University.</span></li>
+        <li><span class="when">2010–2015</span><span class="what"><b>BTech, Computer Science</b>, Federal University of Technology, Akure. Best graduating student in the department.</span></li>
+      </ul>
     </div>
   </div>
 </section>
