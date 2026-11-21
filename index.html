@@ -92,10 +92,10 @@
     .head p { color: var(--ink-2); max-width: 62ch; margin: 10px 0 0; }
 
     /* Research */
-    .research { display: grid; grid-template-columns: 260px 1fr; gap: 56px; }
-    .research h2 { font-size: 30px; margin-top: 6px; }
-    .prose p { color: var(--ink-2); font-size: 17.5px; max-width: 68ch; }
-    .prose p:last-child { margin-bottom: 0; }
+    #research { padding: 56px 0; }
+    .research-h { font-size: 30px; margin-bottom: 20px; }
+    .prose { columns: 2; column-gap: 48px; }
+    .prose p { color: var(--ink-2); font-size: 16.5px; break-inside: avoid; margin: 0 0 14px; }
     .qgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .q { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 24px; }
     .q .num { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 2px 9px; border-radius: 999px; margin-bottom: 12px; }
@@ -232,7 +232,7 @@
       .feature-grid .card.big .media { aspect-ratio: 4 / 3; }
       .big-awards .amt { font-size: 34px; }
       .pub, .rows li { grid-template-columns: 1fr; gap: 6px; }
-      .research { grid-template-columns: 1fr; gap: 16px; }
+      .prose { columns: 1; }
       .skills { grid-template-columns: 1fr; }
       .skills dt { border-bottom: 0; padding-bottom: 0; }
       .contact .wrap { grid-template-columns: 1fr; }
@@ -275,22 +275,14 @@
         <a class="btn btn-solid" href="#research">View my research</a>
         <a class="btn btn-line" href="#contact">Get in touch</a>
       </div>
-      <div class="creds">
-        <span>PhD, Dalhousie University</span>
-        <span>Killam Predoctoral Scholar, 2023–2026</span>
-        <span>Published at ICSE, FSE and ICML</span>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- RESEARCH -->
 <section class="block" id="research">
-  <div class="wrap research">
-    <div>
-      <div class="eyebrow">Research</div>
-      <h2>What I work on</h2>
-    </div>
+  <div class="wrap">
+    <h2 class="research-h">Research</h2>
     <div class="prose">
       <p>I study how software engineers make decisions that affect the people who use their software, and I design ways to make those decisions better. My research brings together social sustainability, responsible AI and empirical software engineering.</p>
       <p>During my PhD, I developed and tested interventions, including user personas, stakeholder maps and structured training, that help developers recognize who a feature might harm and give harmful features lower priority. I evaluated them in randomized controlled experiments with students and professionals.</p>
