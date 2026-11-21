@@ -3,1402 +3,810 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bimpe Ayoola, PhD — Software Enginering Researcher</title>
+  <title>Bimpe Ayoola, PhD</title>
+  <meta name="description" content="Bimpe Ayoola builds the science behind trustworthy AI and socially sustainable software." />
+  <meta property="og:title" content="Bimpe Ayoola, PhD" />
+  <meta property="og:description" content="Research Scientist. PhD in Computer Science, Dalhousie University. Trustworthy AI and socially sustainable software." />
+  <meta property="og:image" content="https://devbimpe.github.io/photo.jpg" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --navy: #0b1120;
-      --navy-2: #131e33;
-      --teal: #0ea5a0;
-      --teal-light: #5eead4;
-      --teal-dim: rgba(14,165,160,0.12);
-      --white: #ffffff;
-      --off-white: #f8fafc;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --card-bg: #ffffff;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-      --max: 1100px;
-      --radius: 16px;
+      --bg: #ffffff;
+      --bg-2: #f6f7f6;
+      --ink: #1b1f1e;
+      --ink-2: #4a514f;
+      --muted: #7a817f;
+      --rule: #e2e5e3;
+      --accent: #1e5b52;
+      --accent-2: #2f7a6e;
+      --accent-tint: #e8f1ef;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'Source Sans 3', system-ui, sans-serif;
+      --wide: 1080px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #131615;
+        --bg-2: #1a1e1d;
+        --ink: #e8ecea;
+        --ink-2: #b8c0bd;
+        --muted: #8b9491;
+        --rule: #2b302e;
+        --accent: #7cc4b5;
+        --accent-2: #9ad6c9;
+        --accent-tint: #1d2b28;
+      }
     }
 
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); font-size: 16px; color: var(--text); background: var(--white); overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+    a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--accent-2); }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0; }
+    p { margin: 0 0 1em; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
+    .wrap { max-width: var(--wide); margin: 0 auto; padding: 0 28px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
 
-    /* ─── SCROLLBAR ─── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+    /* Nav */
+    .top { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 58px; }
+    .top .name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .top nav { display: flex; gap: 24px; }
+    .top nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; white-space: nowrap; }
+    .top nav a:hover { color: var(--accent); }
 
-    /* ─── REVEAL ANIMATION ─── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    /* Intro */
+    .hero { padding: 64px 0 56px; border-bottom: 1px solid var(--rule); }
+    .hero .wrap { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+    .hero h1 { font-size: 40px; letter-spacing: -0.01em; line-height: 1.18; margin: 12px 0 18px; max-width: 24ch; }
+    .hero h1 .mark { box-shadow: inset 0 -0.14em 0 var(--accent-tint); }
+    .hero .intro { color: var(--ink-2); font-size: 18px; max-width: 62ch; margin-bottom: 26px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 11px 20px; border-radius: 4px; font-weight: 600; font-size: 16px; text-decoration: none; border: 1px solid transparent; transition: background .15s, border-color .15s, color .15s; }
+    .btn-solid, .btn-dark { background: var(--accent); color: #fff; }
+    .btn-solid:hover, .btn-dark:hover { background: var(--accent-2); color: #fff; }
+    .btn-line { border-color: var(--rule); color: var(--ink); background: var(--bg); }
+    .btn-line:hover { border-color: var(--accent); color: var(--accent); }
+    .creds { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 28px; }
+    .creds span { font-size: 14px; color: var(--ink-2); background: var(--bg-2); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 999px; }
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      padding: 0 40px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    nav.scrolled {
-      background: rgba(11,17,32,0.96);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      backdrop-filter: blur(12px);
-    }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.83rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--teal-light); }
+    /* Portrait card */
+    .portrait { margin: 0; background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 10px; }
+    .portrait .frame { border-radius: 3px; overflow: hidden; }
+    .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; }
+    .portrait figcaption { padding: 12px 4px 4px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+    .portrait figcaption strong { display: block; font-family: var(--serif); font-size: 17px; color: var(--ink); }
+    .portrait .links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font-size: 14px; }
 
-    /* ─── HERO ─── */
-    #hero {
-      min-height: 100vh;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 100px 40px 80px;
-    }
-    /* Decorative grid */
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(14,165,160,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(14,165,160,0.06) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-    }
-    /* Glow blobs */
-    .hero-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .hero-blob-1 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(14,165,160,0.18), transparent 70%);
-      top: -100px; right: -100px;
-    }
-    .hero-blob-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(94,234,212,0.08), transparent 70%);
-      bottom: 0; left: 10%;
-    }
+    /* Sections */
+    section.block { padding: 72px 0; }
+    section.alt { background: var(--bg-2); }
+    .head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .head h2 { font-size: 30px; margin-top: 6px; }
+    .head p { color: var(--ink-2); max-width: 62ch; margin: 10px 0 0; }
 
-    .hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
+    /* Research */
+    #research { padding: 56px 0; }
+    .research-h { font-size: 30px; margin-bottom: 20px; }
+    .prose { columns: 2; column-gap: 48px; }
+    .prose p { color: var(--ink-2); font-size: 16.5px; break-inside: avoid; margin: 0 0 14px; }
+    .qgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .q { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 24px; }
+    .q .num { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 2px 9px; border-radius: 999px; margin-bottom: 12px; }
+    .q h3 { font-size: 19px; margin-bottom: 8px; }
+    .q p { color: var(--ink-2); margin: 0; font-size: 16px; }
+    .findings { display: grid; grid-template-columns: 170px 1fr; gap: 24px; margin-top: 24px; padding: 24px; border-radius: 6px; background: var(--accent-tint); }
+    .findings h3 { font-size: 18px; color: var(--accent); }
+    .findings ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .findings li { font-size: 16px; color: var(--ink-2); }
+    .findings li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 20px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px; height: 1.5px;
-      background: var(--teal-light);
-    }
+    /* Cards (news and writing) */
+    .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+    .feature-grid .card { grid-column: span 2; }
+    .feature-grid .card.big { grid-column: span 3; }
+    .feature-grid .card.big .media { aspect-ratio: 16 / 9; }
+    .card { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, border-color .2s; }
+    .card:hover { border-color: #cfd5d2; box-shadow: 0 10px 28px -18px rgba(20,40,36,.35); }
+    .card .media { position: relative; aspect-ratio: 4 / 3; background: var(--bg-2); border-bottom: 1px solid var(--rule); }
+    .card .media.wide { aspect-ratio: 16 / 9; }
+    .card .media { overflow: hidden; }
+    .card .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .card .tag { position: absolute; left: 12px; top: 12px; background: rgba(255,255,255,.94); color: #1e5b52; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; }
+    .card .body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+    .card time { font-size: 14px; color: var(--muted); }
+    .card h3 { font-size: 19px; margin: 4px 0 8px; }
+    .card h3 a { color: var(--ink); text-decoration: none; }
+    .card h3 a:hover { color: var(--accent); }
+    .card p { font-size: 16px; color: var(--ink-2); margin: 0; }
+    .card a.cover { display: block; }
+    .card a.more { margin-top: auto; padding-top: 14px; font-size: 15px; font-weight: 600; text-decoration: none; }
+    .card a.more::after { content: " \2192"; }
 
-    .hero-text h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 28px;
-    }
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--teal-light);
-    }
+    .updates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; margin-top: 32px; border-top: 1px solid var(--rule); }
+    .updates li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .updates time { font-size: 14px; color: var(--accent); font-weight: 600; }
+    .updates p { margin: 2px 0 0; font-size: 16px; color: var(--ink-2); }
+    .updates p b { color: var(--ink); font-weight: 600; }
+    .read-all { margin-top: 28px; }
 
-    .hero-text p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.75;
-      max-width: 540px;
-      margin-bottom: 36px;
-    }
+    /* Awards */
+    .awards { background: var(--bg); padding: 72px 0; }
+    .big-awards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .award { background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; }
+    .award .amt { font-family: var(--serif); font-weight: 600; color: var(--accent); font-size: 26px; line-height: 1.1; }
+    .award .amt small { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .08em; color: var(--muted); margin-left: 6px; }
+    .award h3 { font-size: 19px; margin: 12px 0 2px; }
+    .award .src { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .award p { font-size: 15.5px; color: var(--ink-2); margin: 0; }
+    .award .yr { margin-top: auto; padding-top: 14px; font-size: 13px; font-weight: 600; letter-spacing: .08em; color: var(--muted); }
+    .big-awards .award { padding: 30px; border-left: 4px solid var(--accent); }
+    .big-awards .amt { font-size: 42px; }
+    .big-awards h3 { font-size: 22px; }
+    .small-awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+    .small-awards .amt.word { font-size: 20px; }
+    .also { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
+    .also li { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 15.5px; color: var(--ink-2); }
+    .also b { display: block; font-family: var(--serif); color: var(--accent); font-size: 17px; }
+    .also span { color: var(--muted); font-size: 13px; font-weight: 600; margin-left: 6px; }
 
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      padding: 13px 28px;
-      background: var(--teal);
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
-    .btn-primary:hover { background: #0d9488; transform: translateY(-1px); }
-    .btn-ghost {
-      padding: 13px 28px;
-      background: transparent;
-      color: rgba(255,255,255,0.75);
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 8px;
-      border: 1.5px solid rgba(255,255,255,0.18);
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-    }
-    .btn-ghost:hover { border-color: var(--teal-light); color: var(--teal-light); transform: translateY(-1px); }
+    /* Publications */
+    .pubs { border-top: 1px solid var(--rule); }
+    .pub { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+    .venue { align-self: start; justify-self: start; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 3px 9px; border-radius: 3px; white-space: nowrap; }
+    .pub .title { font-family: var(--serif); font-size: 18px; line-height: 1.35; color: var(--ink); display: block; margin-bottom: 4px; }
+    a.title { text-decoration: none; }
+    a.title:hover { color: var(--accent); }
+    .pub .meta { font-size: 15px; color: var(--muted); }
+    .pub .me { color: var(--ink); font-weight: 600; }
+    .pub-sub { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 28px 0 0; padding-bottom: 8px; }
+    details.all summary { list-style: none; cursor: pointer; display: inline-block; margin-top: 22px; font-weight: 600; color: var(--accent); }
+    details.all summary::-webkit-details-marker { display: none; }
+    details.all summary::after { content: " +"; }
+    details.all[open] summary::after { content: " \2212"; }
 
-    /* Stats row */
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 52px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .stat-item { }
-    .stat-number {
-      font-family: var(--serif);
-      font-size: 2rem;
-      color: var(--white);
-      line-height: 1;
-    }
-    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+    /* Background tabs */
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--rule); overflow-x: auto; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs button { font: inherit; font-size: 16px; font-weight: 500; color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 16px; margin-bottom: -1px; cursor: pointer; white-space: nowrap; }
+    .tabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+    .tabs button:hover { color: var(--ink); }
+    .panel { padding-top: 8px; }
+    .panel[hidden] { display: none; }
+    .rows li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .rows .when { font-size: 15px; color: var(--muted); padding-top: 2px; }
+    .rows h3 { font-size: 18px; }
+    .rows .org { font-size: 15px; color: var(--muted); margin: 2px 0 6px; }
+    .rows p { margin: 0; color: var(--ink-2); font-size: 16px; max-width: 70ch; }
+    .rows .what { color: var(--ink-2); font-size: 16px; }
+    .rows .what b { color: var(--ink); font-weight: 600; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+    .panel h4 { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 28px 0 0; padding-bottom: 4px; }
 
-    /* Photo */
-    .hero-photo-wrap {
-      position: relative;
-      flex-shrink: 0;
-    }
-    .hero-photo {
-      width: 300px;
-      height: 360px;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      background: var(--navy-2);
-      border: 1px solid rgba(14,165,160,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-photo-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.2);
-    }
-    .hero-photo-placeholder svg { width: 64px; height: 64px; }
-    .hero-photo-placeholder span { font-size: 0.75rem; text-align: center; line-height: 1.5; }
+    /* Skills */
+    .skills { margin: 8px 0 0; display: grid; grid-template-columns: 180px 1fr; }
+    .skills dt { font-size: 15px; font-weight: 600; color: var(--ink); padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .skills dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px; }
+    .skills dd span { font-size: 14.5px; color: var(--ink-2); background: var(--bg); border: 1px solid var(--rule); padding: 3px 11px; border-radius: 999px; }
 
-    /* Photo frame accents */
-    .hero-photo-wrap::before {
-      content: '';
-      position: absolute;
-      top: -12px; right: -12px;
-      width: 100%; height: 100%;
-      border: 1.5px solid rgba(14,165,160,0.3);
-      border-radius: 20px;
-      z-index: -1;
-    }
-    /* Floating badge */
-    .hero-badge {
-      position: absolute;
-      bottom: -16px;
-      left: -20px;
-      background: var(--navy-2);
-      border: 1px solid rgba(14,165,160,0.3);
-      border-radius: 12px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .hero-badge-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      flex-shrink: 0;
-      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
-      50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.08); }
-    }
-    .hero-badge-text { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
-    .hero-badge-text strong { color: var(--white); display: block; font-size: 0.83rem; }
+    /* Contact */
+    .contact { padding: 64px 0; border-top: 1px solid var(--rule); }
+    .contact .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .contact h2 { font-size: 30px; margin: 6px 0 10px; }
+    .contact p { color: var(--ink-2); max-width: 56ch; margin: 0; font-size: 18px; }
+    footer { border-top: 1px solid var(--rule); padding: 22px 0; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
 
-    /* ─── SECTION WRAPPER ─── */
-    .section-wrap { padding: 96px 40px; }
-    .section-wrap.dark { background: var(--navy); }
-    .section-wrap.gray { background: var(--off-white); }
-    .container { max-width: var(--max); margin: 0 auto; }
-
-    .section-header { margin-bottom: 56px; }
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 12px;
+    @media (max-width: 920px) {
+      .hero .wrap { grid-template-columns: 200px 1fr; gap: 32px; }
+      .hero h1 { font-size: 32px; }
+      .qgrid, .post-grid, .updates, .small-awards { grid-template-columns: 1fr 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .feature-grid .card, .feature-grid .card.big { grid-column: span 1; }
+      .big-awards { grid-template-columns: 1fr; }
+      .findings { grid-template-columns: 1fr; }
+      .findings ul { grid-template-columns: 1fr; gap: 14px; }
+      .two { grid-template-columns: 1fr; }
     }
-    .section-tag::before {
-      content: '';
-      display: block;
-      width: 20px; height: 1.5px;
-      background: var(--teal);
-    }
-    .section-heading {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-    .section-heading.light { color: var(--white); }
-    .section-sub {
-      margin-top: 14px;
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 520px;
-      line-height: 1.7;
-    }
-    .section-sub.light { color: rgba(255,255,255,0.5); }
-
-    /* ─── WHAT I DO (3 cards) ─── */
-    /* .focus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    } */
-      .focus-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-    }
-    .focus-card {
-      padding: 32px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.04);
-      transition: border-color 0.25s, background 0.25s, transform 0.25s;
-      cursor: default;
-    }
-    .focus-card:hover {
-      border-color: rgba(14,165,160,0.35);
-      background: rgba(14,165,160,0.06);
-      transform: translateY(-4px);
-    }
-    .focus-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: rgba(14,165,160,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    .focus-icon svg { width: 22px; height: 22px; color: var(--teal-light); }
-    .focus-card h3 {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      color: var(--white);
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-    .focus-card p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
-
-    /* ─── ABOUT ─── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about-text h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    .about-text h2 span { color: var(--teal); }
-    .about-text p {
-      font-size: 0.97rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .about-stat {
-      padding: 24px;
-      background: var(--off-white);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-    .about-stat-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .about-stat-num span { color: var(--teal); }
-    .about-stat-label { font-size: 0.82rem; color: var(--muted); }
-
-    /* ─── RESEARCH ─── */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .research-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: border-color 0.25s, transform 0.25s, background 0.25s;
-      display: flex;
-      flex-direction: column;
-    }
-    .research-card:hover {
-      border-color: rgba(14,165,160,0.3);
-      background: rgba(14,165,160,0.05);
-      transform: translateY(-3px);
-    }
-    .research-venue {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 12px;
-    }
-    .research-card h3 {
-      font-size: 0.97rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.5;
-      margin-bottom: 12px;
-      flex: 1;
-    }
-    .research-authors {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.38);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .research-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      border: 1px solid;
-      align-self: flex-start;
-    }
-    .badge-green { color: #4ade80; border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.08); }
-    .badge-yellow { color: #facc15; border-color: rgba(250,204,21,0.3); background: rgba(250,204,21,0.08); }
-
-    /* ─── EXPERIENCE TIMELINE ─── */
-    .timeline { position: relative; padding-left: 32px; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px; bottom: 8px;
-      width: 1.5px;
-      background: linear-gradient(to bottom, var(--teal), transparent);
-    }
-    .timeline-item {
-      position: relative;
-      padding-bottom: 48px;
-    }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-dot {
-      position: absolute;
-      left: -38px;
-      top: 6px;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--teal);
-      border: 2px solid var(--off-white);
-      box-shadow: 0 0 0 3px rgba(14,165,160,0.2);
-    }
-    .timeline-meta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-    }
-    .timeline-date {
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .timeline-org {
-      font-size: 0.76rem;
-      color: var(--muted);
-      padding: 2px 8px;
-      background: var(--off-white);
-      border-radius: 4px;
-      border: 1px solid var(--border);
-    }
-    .timeline-item h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-    .timeline-item p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 640px;
-    }
-    .timeline-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .timeline-tag {
-      font-size: 0.73rem;
-      padding: 3px 10px;
-      background: var(--teal-dim);
-      color: var(--teal);
-      border-radius: 999px;
-      font-weight: 500;
-    }
-
-    /* ─── EDUCATION ─── */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .edu-card {
-      padding: 28px;
-      border-radius: var(--radius);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .edu-card:hover { border-color: var(--teal); transform: translateY(-3px); }
-    .edu-card-year {
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 12px;
-    }
-    .edu-card h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .edu-card .edu-place {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .edu-card .edu-note {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .edu-award {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #a16207;
-      background: #fef9c3;
-      padding: 3px 10px;
-      border-radius: 4px;
-      margin-top: 12px;
-    }
-    .edu-award::before { content: '★'; font-size: 0.65rem; }
-
-    /* ─── SKILLS ─── */
-    .skills-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .skills-left { }
-    .skill-category { margin-bottom: 32px; }
-    .skill-category:last-child { margin-bottom: 0; }
-    .skill-cat-name {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .skill-bubbles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .skill-bubble {
-      font-size: 0.85rem;
-      padding: 7px 16px;
-      border-radius: 999px;
-      background: var(--off-white);
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      font-weight: 500;
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-      cursor: default;
-    }
-    .skill-bubble:hover { border-color: var(--teal); background: var(--teal-dim); color: var(--teal); }
-    .skill-bubble.highlight { background: var(--teal-dim); border-color: rgba(14,165,160,0.35); color: var(--teal); }
-
-    /* Tools visual */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .tool-item {
-      padding: 16px 14px;
-      border-radius: 10px;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: var(--text);
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .tool-item:hover { border-color: var(--teal); background: var(--teal-dim); }
-    .tool-item .tool-emoji { font-size: 1.2rem; display: block; margin-bottom: 4px; }
-
-    /* ─── AWARDS STRIP ─── */
-    .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .award-card {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.03);
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .award-card:hover { border-color: rgba(14,165,160,0.3); background: rgba(14,165,160,0.05); }
-    .award-star {
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .award-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-    .award-card p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
-
-    /* ─── COMMUNITY ─── */
-    .community-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .community-card {
-      padding: 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .community-card:hover {
-      border-color: var(--teal);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(14,165,160,0.08);
-    }
-    .community-icon {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      background: var(--teal-dim);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
-      font-size: 1.2rem;
-    }
-    .community-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .community-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
-    .community-card .community-date {
-      font-size: 0.73rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--teal);
-      margin-top: 12px;
-    }
-
-    /* ─── CONTACT ─── */
-    #contact { background: var(--navy); padding: 100px 40px; position: relative; overflow: hidden; }
-    #contact::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(14,165,160,0.1), transparent 70%);
-      filter: blur(40px);
-      pointer-events: none;
-    }
-    .contact-inner { max-width: 640px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
-    .contact-inner h2 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: var(--white);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .contact-inner h2 em { font-style: italic; color: var(--teal-light); }
-    .contact-inner p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-    .contact-links {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 24px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .contact-link.teal { background: var(--teal); color: #fff; }
-    .contact-link.teal:hover { background: #0d9488; transform: translateY(-2px); }
-    .contact-link.outline { border: 1.5px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.75); }
-    .contact-link.outline:hover { border-color: var(--teal-light); color: var(--teal-light); transform: translateY(-2px); }
-    .contact-link svg { width: 16px; height: 16px; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #070d1a;
-      padding: 24px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    footer span { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--teal-light); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1100px) {
-  .focus-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-photo-wrap { display: none; }
-      .focus-grid, .research-grid, .community-grid { grid-template-columns: 1fr; }
-      .about-grid, .skills-layout { grid-template-columns: 1fr; }
-      .edu-grid { grid-template-columns: 1fr; }
-      .awards-grid { grid-template-columns: 1fr; }
-      nav { padding: 0 20px; }
-      .nav-links { gap: 18px; }
-      .section-wrap { padding: 64px 20px; }
-      #contact { padding: 80px 20px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-    }
-    @media (max-width: 600px) {
-      .hero-stats { gap: 24px; flex-wrap: wrap; }
-      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 16px; }
+      .top nav { display: none; }
+      .hero { padding: 32px 0 44px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 24px; }
+      .portrait { max-width: 220px; }
+      .hero h1 { font-size: 29px; }
+      .hero .intro { font-size: 17px; }
+      section.block, .awards { padding: 52px 0; }
+      .head { display: block; }
+      .head h2 { font-size: 26px; }
+      .qgrid, .feature-grid, .post-grid, .updates, .small-awards, .also { grid-template-columns: 1fr; }
+      .feature-grid .card.big .media { aspect-ratio: 4 / 3; }
+      .big-awards .amt { font-size: 34px; }
+      .pub, .rows li { grid-template-columns: 1fr; gap: 6px; }
+      .prose { columns: 1; }
+      .skills { grid-template-columns: 1fr; }
+      .skills dt { border-bottom: 0; padding-bottom: 0; }
+      .contact .wrap { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
-<nav id="navbar">
-  <a class="nav-logo" href="#hero">Bimpe Ayoola, PhD</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#community">Community</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Bimpe Ayoola, PhD</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#background">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<!-- ─── HERO ─── -->
-<section id="hero">
-  <div class="hero-blob hero-blob-1"></div>
-  <div class="hero-blob hero-blob-2"></div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-eyebrow">Research Scientist · PhD, Computer Science</div>
-      <!-- <h1>Building software that<br/><em>works equitably for people.</em></h1> -->
-      <h1>Building the science <br/><em>behind trustworthy AI & socially sustainable software.</em></h1>
-      <p>I research how software teams can embed equity, inclusion, and human wellbeing into the products they build, and develop the tools and frameworks to make that possible.</p>
-      <div class="hero-ctas">
-        <a href="#research" class="btn-primary">View My Research</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">8+</div>
-          <div class="stat-label">Publications</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Awards & Grants</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">$186K+</div>
-          <div class="stat-label">Competitive funding</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Industry and research delivery</div>
-        </div>
-      </div>
-    </div>
+<main>
 
-    <div class="hero-photo-wrap">
-      <div class="hero-photo">
-        
-          <img src="photo.jpg" alt="Bimpe Ayoola" />
-       
-        <!-- <div class="hero-photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg> -->
-          <!-- <span>Add your photo here<br/>See instructions in the code</span> -->
-        <!-- </div> -->
-      </div>
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        <div class="hero-badge-text">
-          <strong>Open to Collaborations</strong>
-          Halifax, Canada
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <figure class="portrait">
+      <div class="frame"><img src="photo.jpg" alt="Portrait of Bimpe Ayoola" width="260" height="325" /></div>
+      <figcaption><strong>Bimpe Ayoola, PhD</strong>Computer Science, Dalhousie University<br />Halifax, Nova Scotia
+        <div class="links"><a href="mailto:bimpeayoolac@gmail.com">Email</a><a href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&amp;hl=en">Scholar</a><a href="https://www.linkedin.com/in/bimpe-ayoola-phd-61939455/">LinkedIn</a></div>
+      </figcaption>
+    </figure>
+    <div>
+      <div class="eyebrow">Research Scientist · PhD, Computer Science</div>
+      <h1>Building the science behind <span class="mark">trustworthy AI</span> and socially sustainable software.</h1>
+      <p class="intro">AI coding agents are changing how software is built, including the systems people rely on for healthcare, finance and public services. I study how to make that software safe and fair for the people who use it. I develop and test interventions that help developers recognize and prevent harms, such as unfair treatment and barriers to access, before their software reaches the public.</p>
+      <div class="btns">
+        <a class="btn btn-solid" href="#research">View my research</a>
+        <a class="btn btn-line" href="#contact">Get in touch</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── WHAT I DO ─── -->
-<section class="section-wrap dark" id="focus">
-  <div class="container">
-    <div class="focus-grid">
-      <div class="focus-card reveal">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-        </div>
-        <h3>Empirical Research</h3>
-        <p>I design rigorous empirical studies that generate evidence about how software developers and AI systems make decisions, and how those decisions can be improved</p>
-      </div>
-      <div class="focus-card reveal reveal-delay-1">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <!-- <h3>Social Sustainability</h3>
-        <p>I develop frameworks and tools that help practitioners embed values like equity, inclusion, and wellbeing into software, making "doing good" a concrete, actionable part of the development process.</p>
-      </div> -->
-         <h3>Responsible AI & Social Sustainability</h3>
-        <p>I develop methods that help software and AI systems better respect human values such as fairness, wellbeing, inclusion, privacy, and safety through measurable, evidence based interventions</p>
-      </div>
-      <div class="focus-card reveal reveal-delay-2">
-        <div class="focus-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5.25 3.75 9.75 9 11 5.25-1.25 9-5.75 9-11V6l-9-4z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3>AI Safety & Human AI Collaboration</h3>
-        <p>I study how people and AI systems work together in high stakes settings, developing methods for AI evaluation, alignment research, and trustworthy human AI collaboration.</p>
-      </div>
-  <div class="focus-card reveal reveal-delay-2">
-        <div class="focus-icon">
-           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-      <h3>Education & Mentorship</h3>
-        <p>I teach and mentor students - from undergraduates learning software engineering to youth discovering coding for the first time - committed to making computer science accessible and inclusive.</p>
-      </div>  
+<!-- RESEARCH -->
+<section class="block" id="research">
+  <div class="wrap">
+    <h2 class="research-h">Research</h2>
+    <div class="prose">
+      <p>I study how software engineers make decisions that affect the people who use their software, and I design ways to make those decisions better. My research brings together social sustainability, responsible AI and empirical software engineering.</p>
+      <p>During my PhD, I developed and tested interventions, including user personas, stakeholder maps and structured training, that help developers recognize who a feature might harm and give harmful features lower priority. I evaluated them in randomized controlled experiments with students and professionals.</p>
+      <p>I now bring the same focus to AI safety. AI coding agents write a growing share of software, so I study how harm enters their code, how well developers catch it in review, and how to reduce these risks before they reach people. I also work to make AI evaluation more rigorous, including guidelines for randomized controlled trials in AI evaluation.</p>
+      <p>Before academia, I spent seven years as a software engineer and technical project manager building enterprise systems. That work gave me a practitioner's eye for the problems research needs to solve.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
-<section class="section-wrap" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <div class="section-tag">About Me</div>
-        <h2>Researcher, educator,<br/>and <span>community builder</span></h2>
-        <p>I study how software engineers make decisions that affect people, and I design ways to make those decisions better.
-        <p>My research sits at the intersection of social sustainability, responsible AI, and empirical software engineering.</p> 
-        I build and evaluate interventions that change how developers reason about fairness, safety, and inclusion in the systems they build.
-        I now bring that same focus to AI safety. I study how AI systems, especially AI coding agents, can produce harmful outcomes, 
-        and how to evaluate and reduce those risks before they reach people. My work includes evaluating AI coding agents and 
-        researching how AI risk studies can be designed more rigorously.</p>
-      <p>Before academia, I spent seven years as a software engineer and technical project manager building enterprise systems, giving me a practitioner’s eye for what research actually needs to solve.</p>
-  
+<!-- PUBLICATIONS -->
+<section class="block alt" id="publications">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Publications</div>
+        <h2>Selected papers</h2>
       </div>
-      <div class="about-stats reveal reveal-delay-1">
-        <div class="about-stats">
-          <div class="about-stat">
-            <div class="about-stat-num">5<span>+</span></div>
-            <div class="about-stat-label">ICSE, FSE Publications (top SE conference)</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">4.6</div>
-            <div class="about-stat-label">Avg. teaching rating out of 5.0</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">9yrs<span>+</span></div>
-            <div class="about-stat-label">Industry experience before academia</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">60<span>+</span></div>
-            <div class="about-stat-label">Universities represented by her advocacy</div>
-          </div>
+      <a href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&amp;hl=en">Google Scholar profile</a>
+    </div>
+
+    <div class="pubs">
+      <div class="pub">
+        <span class="venue">ICSE 2025</span>
+        <div>
+          <span class="title">User Personas Improve Social Sustainability by Encouraging Software Developers to Deprioritize Antisocial Features</span>
+          <div class="meta"><span class="me">B. Ayoola</span>, M. Kuutila, R. R. Wehbe, P. Ralph. IEEE/ACM International Conference on Software Engineering, Research Track.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <span class="venue">FSE 2026</span>
+        <div>
+          <span class="title">Advancing Evidence-Based Social Sustainability in Software Engineering: A Research Roadmap</span>
+          <div class="meta"><span class="me">B. Ayoola</span>, A. Andrade, R. S. Santos, P. Ralph. ACM International Conference on the Foundations of Software Engineering, Ideas, Visions and Reflections.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <span class="venue">ICML 2026</span>
+        <div>
+          <span class="title">Principles and Guidelines for Randomized Controlled Trials in AI Evaluation</span>
+          <div class="meta">C. Kelly, A. Chowdhury, A. Campili, <span class="me">B. Ayoola</span>, D. Barbour, T. C. Dawson, Z. S. Chin, R. Gipiškis. Workshop on Technical AI Governance Research.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <span class="venue">ICSE 2023</span>
+        <div>
+          <span class="title">Sustainability is Stratified: Toward a Better Theory of Sustainable Software Engineering</span>
+          <div class="meta">S. McGuire, E. Schultz, <span class="me">B. Ayoola</span>, P. Ralph. IEEE/ACM International Conference on Software Engineering, Research Track.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ─── RESEARCH / PUBLICATIONS ─── -->
-<section class="section-wrap dark" id="research">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Scholarly Work</div>
-      <h2 class="section-heading light">Featured Publications</h2>
-      <p class="section-sub light">Peer-reviewed work published at top software engineering venues, with more under review.</p>
-    </div>
-    <div class="research-grid">
-      <div class="research-card reveal">
-        <div class="research-venue">ICML TAIGR 2026 · Technical AI Governance Research</div>
-        <h3>Principles and Guidelines for Randomized Controlled Trials in AI Evaluation</h3>
-        <p class="research-authors">Kelly, C., Chowdhury, A., Campili, A., Ayoola, B., et al.</p>
-        <span class="research-badge badge-green">AI Safety · Published</span>
-      </div>
-      
-      <div class="research-card reveal">
-        <div class="research-venue">FSE 2026 · Montreal · Accepted</div>
-        <h3>Advancing Evidence-Based Social Sustainability in Software Engineering: A Research Roadmap</h3>
-        <p class="research-authors">Ayoola, B., Andrade, A., Santos, R. S., & Ralph, P.</p>
-        <span class="research-badge badge-green">Published</span>
-      </div>
+    <details class="all">
+      <summary>Show all publications</summary>
 
-      <div class="research-card reveal reveal-delay-1">
-        <div class="research-venue">FSE 2026 · IntersectionalitySE Workshop</div>
-        <h3>Team Diversity Promotes Software Fairness: An Experiment on Fairness-Aware Requirements Prioritization</h3>
-        <p class="research-authors">Magalhães, C., Santos, R. S., Ayoola, B., et al. · arXiv:2603.12406</p>
-        <span class="research-badge badge-green">Published</span>
-      </div>
-
-      <div class="research-card reveal reveal-delay-2">
-        <div class="research-venue">ICSE 2025 · Ottawa</div>
-        <h3>User Personas Improve Social Sustainability by Encouraging Software Developers to Deprioritize Antisocial Features</h3>
-        <p class="research-authors">Ayoola, B., Kuutila, M., Wehbe, R. R., & Ralph, P. · pp. 833–845</p>
-        <span class="research-badge badge-green">Published</span>
-      </div>
-
-      <div class="research-card reveal">
-        <div class="research-venue">ICSE 2026 · Rio, Brazil</div>
-        <h3>The Software Infrastructure Attitude Scale (SIAS): Measuring Professionals' Attitudes Toward Technical &amp; Sociotechnical Infrastructure</h3>
-        <p class="research-authors">Kuutila, M., et al. (including Ayoola, B.)</p>
-        <span class="research-badge badge-green">Published</span>
-      </div>
-
-      <div class="research-card reveal reveal-delay-1">
-        <div class="research-venue">ICSE 2023 · Melbourne</div>
-        <h3>Sustainability is Stratified: Toward a Better Theory of Sustainable Software Engineering</h3>
-        <p class="research-authors">McGuire, S., Schultz, E., Ayoola, B., & Ralph, P. · pp. 1996–2008</p>
-        <span class="research-badge badge-green">Published</span>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<!-- ─── EXPERIENCE ─── -->
-<section class="section-wrap gray" id="experience">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Background</div>
-      <h2 class="section-heading">Where I've worked &amp; what I've built</h2>
-    </div>
-    <div class="timeline">
-
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">May 2022 – Sept 2026</span>
-          <span class="timeline-org">Dalhousie Software Engineering Lab</span>
-        </div>
-        <h3>Doctoral Researcher</h3>
-        <p>Co-led a multi-year empirical research program on social sustainability in software engineering — from scoping reviews to full randomized controlled trials. Coordinated an industry-academic partnership that produced evidence that user personas improve socially sustainable software design.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Empirical Research</span>
-          <span class="timeline-tag">Mixed Methods</span>
-          <span class="timeline-tag">Industry Partnership</span>
-        </div>
-      </div>
-      
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">Sep 2025 – Present</span>
-          <span class="timeline-org">SPAR — Supervised Program for Alignment Research</span>
-        </div>
-        <h3>AI Safety Research Fellow</h3>
-        <p>Researching methodological standards for evaluating risks in advanced AI systems. Analyzing design flaws in AI RCT studies. Developing recommendations to improve the rigor, transparency, and social impact of AI capability assessments for responsible deployment in high-stakes domains.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">AI Safety</span>
-          <span class="timeline-tag">RCT Design</span>
-          <span class="timeline-tag">Uplift Standards</span>
-          <span class="timeline-tag">Responsible AI</span>
-        </div>
-      </div>
-      
-    <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">Jan 2026 – Apr 2026</span>
-          <span class="timeline-org">University of Calgary · Remote</span>
-        </div>
-        <h3>Research Associate — Black Epistemologies Project</h3>
-        <p>Contributing to a multi-institutional project advancing racial equity for Black students in postsecondary STEM. Collecting and analyzing data in Nova Scotia examining anti-Black norms and practices in STEM education, using culturally responsive methodologies alongside an interdisciplinary research team.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Racial Equity</span>
-          <span class="timeline-tag">STEM Education</span>
-          <span class="timeline-tag">Community Research</span>
-        </div>
-      </div>
- 
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">May 2023 – Jan 2026</span>
-          <span class="timeline-org">Imhotep's Legacy Academy · Dalhousie</span>
-        </div>
-        <h3>Research Associate — RBC Securing Black Futures Project</h3>
-        <p>Designed mixed-methods research instruments examining systemic barriers to STEM careers among Black youth in Nova Scotia. Findings are informing policy interventions and will be published in three book chapters.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Equity Research</span>
-          <span class="timeline-tag">Policy</span>
-          <span class="timeline-tag">STEM Access</span>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">2023 – 2024 · Dalhousie University</span>
-          <span class="timeline-org">Faculty of Computer Science</span>
-        </div>
-        <h3>Sessional Instructor</h3>
-        <p>Taught software project courses (CSCI 2691/3691/4691) to ~120 students per semester and an intro programming course (CSCI 2202) to ~60 students. Earned average student ratings of 4.47 and 4.59 out of 5.0. Introduced weekly demo format and a standardized evaluation rubric.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Agile</span>
-          <span class="timeline-tag">Python</span>
-          <span class="timeline-tag">Curriculum Design</span>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">Jun 2014 – Mar 2025</span>
-          <span class="timeline-org">Longbridge Technologies · Code Garage Africa · Wellviser</span>
-        </div>
-        <h3>Technical Project Manager &amp; Software Engineer</h3>
-        <p>Built the backend for Wellvis, a mobile health platform, delivering a working MVP in three weeks that attracted 200+ users at launch. Led Agile transformation that improved team turnaround by 30%. Worked across enterprise systems, fintech, and digital health.</p>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Java</span>
-          <span class="timeline-tag">Spring Boot</span>
-          <span class="timeline-tag">Agile / Scrum</span>
-          <span class="timeline-tag">Digital Health</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── EDUCATION ─── -->
-<section class="section-wrap" id="education">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Education</div>
-      <h2 class="section-heading">Academic Foundation</h2>
-    </div>
-    <div class="edu-grid">
-
-      <div class="edu-card reveal">
-        <div class="edu-card-year">2022 – 2026</div>
-        <h3>PhD, Computer Science (2026)</h3>
-        <div class="edu-place">Dalhousie University · Halifax, Canada</div>
-        <div class="edu-note">Thesis on social sustainability in software engineering. Advisor: Prof. Paul Ralph.</div>
-        <div class="edu-award">Killam Doctoral Award</div>
-      </div>
-
-      <div class="edu-card reveal reveal-delay-1">
-        <div class="edu-card-year">2021 – 2022</div>
-        <h3>MSc, Computer Science</h3>
-        <div class="edu-place">Dalhousie University · Halifax, Canada</div>
-        <div class="edu-note">Coursework in HCI, Software Engineering, Research Methods, and Data Analysis. Transitioned into PhD program.</div>
-      </div>
-
-      <div class="edu-card reveal reveal-delay-2">
-        <div class="edu-card-year">2010 – 2015</div>
-        <h3>BTech, Computer Science</h3>
-        <div class="edu-place">Federal University of Technology Akure · Nigeria</div>
-        <div class="edu-note"> Dean's List. Thesis on Finger-Authentication for E-examinations.</div>
-        <div class="edu-award">Best Graduating Student · CS Dept.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── SKILLS ─── -->
-<section class="section-wrap gray" id="skills">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Expertise</div>
-      <h2 class="section-heading">Skills &amp; Tools</h2>
-    </div>
-    <div class="skills-layout">
-      <div class="skills-left reveal">
-        <div class="skill-category">
-          <div class="skill-cat-name">Research Methods</div>
-          <div class="skill-bubbles">
-            <span class="skill-bubble highlight">Randomized Controlled Trials</span>
-            <span class="skill-bubble highlight">AI Safety Evaluation</span>
-            <span class="skill-bubble highlight">Mixed Methods</span>
-            <span class="skill-bubble">Survey Instruments</span>
-            <span class="skill-bubble">Experimental Design</span>
-            <span class="skill-bubble">Qualitative Analysis</span>
-            <span class="skill-bubble">Participatory Methods</span>
-            <span class="skill-bubble">Research Ethics</span>
+      <div class="pubs" style="border-top:0">
+        <div class="pub">
+          <span class="venue">ICSE 2026</span>
+          <div>
+            <span class="title">The Software Infrastructure Attitude Scale (SIAS): A Questionnaire Instrument for Measuring Professionals' Attitudes Toward Technical and Sociotechnical Infrastructure</span>
+            <div class="meta">M. Kuutila, P. Ralph, H. S. Qiu, et al., including <span class="me">B. Ayoola</span>. Research Track.</div>
           </div>
         </div>
-        <div class="skill-category">
-          <div class="skill-cat-name">Domains</div>
-          <div class="skill-bubbles">
-            <span class="skill-bubble highlight">Responsible AI</span>
-            <span class="skill-bubble highlight">AI Safety</span>
-            <span class="skill-bubble highlight">Social Sustainability in SE</span>
-            <span class="skill-bubble highlight">AI Ethics & Governance</span>
-            <span class="skill-bubble">Empirical Software Engineering</span>
-            <span class="skill-bubble">Fairness & Accountability</span>
-            <span class="skill-bubble">Socio-technical systems</span>
+        <div class="pub">
+          <span class="venue">FSE 2026</span>
+          <div>
+            <a class="title" href="https://arxiv.org/abs/2603.12406">Team Diversity Promotes Software Fairness: An Experiment on Fairness-Aware Requirements Prioritization</a>
+            <div class="meta">C. Magalhães, R. S. Santos, <span class="me">B. Ayoola</span>, B. Stuart-Verner, I. Santos. FSE 2026 Companion.</div>
           </div>
         </div>
-        <div class="skill-category">
-          <div class="skill-cat-name">Communication</div>
-          <div class="skill-bubbles">
-            <span class="skill-bubble">Research Writing</span>
-            <span class="skill-bubble">Policy Communication</span>
-            <span class="skill-bubble">Public Speaking</span>
-            <span class="skill-bubble">Stakeholder Engagement</span>
-            <span class="skill-bubble">Science Communication</span>
+        <div class="pub">
+          <span class="venue">Springer 2024</span>
+          <div>
+            <span class="title">Teaching Software Metrology: The Science of Measurement for Software Engineering</span>
+            <div class="meta">P. Ralph, M. Kuutila, H. Arif, <span class="me">B. Ayoola</span>. Handbook on Teaching Empirical Software Engineering.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <span class="venue">ICSE 2023</span>
+          <div>
+            <span class="title">Evaluation of Stakeholder Mapping and Personas for Sustainable Software Development</span>
+            <div class="meta"><span class="me">B. Ayoola</span>. Doctoral Symposium.</div>
+          </div>
+        </div>
+
+        <div class="pub-sub">Under review</div>
+        <div class="pub">
+          <span class="venue">ICSE 2027</span>
+          <div>
+            <span class="title">Training Software Developers for Social Sustainability: Effects on Software Feature Prioritization</span>
+            <div class="meta"><span class="me">B. Ayoola</span>, E. Schultz, P. Ralph.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <span class="venue">ICSE 2027</span>
+          <div>
+            <span class="title">Assessing Stakeholder Value Map for Social Sustainability in Software Engineering: Evidence from a Randomized Controlled Experiment</span>
+            <div class="meta"><span class="me">B. Ayoola</span>, P. Ralph.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <span class="venue">Book chapter</span>
+          <div>
+            <span class="title">Generational Status, Informal Education and Persistence in STEM for the Black Learner</span>
+            <div class="meta"><span class="me">B. Ayoola</span>, K. Hewitt. RBC Securing Black Futures Project.</div>
+          </div>
+        </div>
+
+        <div class="pub-sub">In revision</div>
+        <div class="pub">
+          <span class="venue">Journal</span>
+          <div>
+            <span class="title">User Personas Improve Social Sustainability: A Replication Experiment with Software Professionals</span>
+            <div class="meta"><span class="me">B. Ayoola</span>, M. Kuutila, P. Ralph.</div>
+          </div>
+        </div>
+        <div class="pub">
+          <span class="venue">Journal</span>
+          <div>
+            <span class="title">Navigating Hybrid Work in Software Teams: Autonomy, Core Office Hours, and the Future of Work</span>
+            <div class="meta"><span class="me">B. Ayoola</span>, F. Wang, P. Ralph.</div>
           </div>
         </div>
       </div>
-      <div class="reveal reveal-delay-1">
-        <div class="skill-cat-name" style="margin-bottom:16px;">Languages &amp; Tools</div>
-        <div class="tools-grid">
-          <div class="tool-item"><span class="tool-emoji">🐍</span>Python</div>
-          <div class="tool-item"><span class="tool-emoji">🛡️</span>Inspect AI</div>
-          <div class="tool-item"><span class="tool-emoji">⚔️</span>PyRIT</div>
-          <div class="tool-item"><span class="tool-emoji">🤗</span>HuggingFace</div>
-          <div class="tool-item"><span class="tool-emoji">🐳</span>Docker</div>
-          <div class="tool-item"><span class="tool-emoji">☕</span>Java</div>
-          <div class="tool-item"><span class="tool-emoji">📊</span>R</div>
-          <div class="tool-item"><span class="tool-emoji">🔀</span>Git</div>
-          <div class="tool-item"><span class="tool-emoji">📝</span>LaTeX</div>
-          <div class="tool-item"><span class="tool-emoji">📋</span>Qualtrics</div>
-          <div class="tool-item"><span class="tool-emoji">🔍</span>NVivo</div>
-          <div class="tool-item"><span class="tool-emoji">📈</span>Leximancer</div>
+    </details>
+  </div>
+</section>
+
+<!-- NEWS
+     To add a featured story, copy one <article class="card"> block.
+     Put the photo in the "news" folder. Landscape photos work best.
+-->
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">News</div>
+        <h2>News and milestones</h2>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <article class="card big">
+        <div class="media">
+          <img src="news/2026-phd-defense.jpg" alt="Bimpe holding flowers and her laptop after her PhD thesis defense at Dalhousie" loading="lazy" style="object-position:60% 15%" />
+          <span class="tag">PhD defense</span>
+        </div>
+        <div class="body">
+          <time datetime="2026-09">September 2026 · Dalhousie University</time>
+          <h3>I defended my PhD!</h3>
+          <p>My thesis investigated how software developers make decisions that affect social sustainability, and designed and evaluated interventions that help them anticipate and reduce the social harms of what they build. Along the way, I presented my work at four international conferences, saw more of the world than I ever expected and had the best supervisor I could have asked for, Professor Paul Ralph.</p>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2026-icml-poster.jpg" alt="Top of the ICML 2026 poster: Principles and Guidelines for Randomized Controlled Trials in AI Evaluation" loading="lazy" style="object-position:50% 0%" />
+          <span class="tag">ICML 2026</span>
+        </div>
+        <div class="body">
+          <time datetime="2026">2026 · TAIGR Workshop</time>
+          <h3>Guidelines for randomized trials in AI evaluation</h3>
+          <p>Unreliable AI evaluations produce unreliable policy. With an international team, we built a framework of 5 principles and 33 guidelines for AI evaluation trials that produce credible, repeatable evidence. It was one of AI Standards Lab's ICML 2026 posters.</p>
+          <a class="more" href="https://www.linkedin.com/posts/aisl-icml-2026-posters-ugcPost-7501202127332044800-enm7/">Read more here</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2026-fse-montreal.jpg" alt="Bimpe and Paul Ralph presenting the research roadmap at FSE 2026" loading="lazy" style="object-position:50% 45%" />
+          <span class="tag">FSE 2026</span>
+        </div>
+        <div class="body">
+          <time datetime="2026">2026 · Montreal</time>
+          <h3>A research roadmap for social sustainability</h3>
+          <p>I led and presented a roadmap for how software engineering can define social sustainability, measure it and test what actually helps.</p>
+          <a class="more" href="https://www.linkedin.com/posts/bimpe-ayoola-phd-61939455_fse2026-softwareengineering-socialsustainability-ugcPost-7480305870007062528-sfNT/">Read more here</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2025-ast-panel.jpg" alt="Bimpe speaking on the AST 2025 panel, with the panelists listed on the screen behind" loading="lazy" style="object-position:50% 62%" />
+          <span class="tag">Invited panel</span>
+        </div>
+        <div class="body">
+          <time datetime="2025-04">2025 · Ottawa</time>
+          <h3>Panelist at AST 2025</h3>
+          <p>I was invited to speak on a panel about automated software testing for sustainability and resource efficiency, co-located with ICSE 2025. I also chaired a session at the conference.</p>
+          <a class="more" href="https://lnkd.in/p/gj9EBFh5">See the post</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="news/2025-icse-ottawa.jpg" alt="Bimpe speaking at the ICSE 2025 podium in Ottawa" loading="lazy" style="object-position:50% 12%" />
+          <span class="tag">ICSE 2025</span>
+        </div>
+        <div class="body">
+          <time datetime="2025-04">2025 · Ottawa</time>
+          <h3>User personas and harmful features</h3>
+          <p>I presented evidence that personas lead developers to push harmful features down their priority list.</p>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2025-killam-celebration.jpg" alt="Bimpe on stage with three other Killam scholars" loading="lazy" />
+          <span class="tag">Invited talk</span>
+        </div>
+        <div class="body">
+          <time datetime="2025">2025 · Dalhousie University</time>
+          <h3>Speaking at the Killam Celebration</h3>
+          <p>As a Killam scholar, I presented my research on social sustainability in software development.</p>
+          <a class="more" href="https://bit.ly/48P0kdv">Read the Dal News story</a>
+        </div>
+      </article>
+
+      <article class="card big">
+        <div class="media">
+          <img src="news/2024-comscicon-boston.jpg" alt="Bimpe in a ComSciCon Flagship 2024 shirt on a street in Boston" loading="lazy" style="object-position:50% 30%" />
+          <span class="tag">ComSciCon 2024</span>
+        </div>
+        <div class="body">
+          <time datetime="2024">2024 · Boston</time>
+          <h3>Learning to communicate science</h3>
+          <p>I was selected for the ComSciCon Flagship workshop and wrote about what it taught me on sharing research beyond the lab.</p>
+          <a class="more" href="https://blogs.dal.ca/openthink/communicating-science-beyond-the-lab-reflections-from-comscicon-2024/">Read my reflection</a>
+        </div>
+      </article>
+    </div>
+
+    <ul class="updates">
+      <li><time datetime="2026">2026</time><p><b>NSERC Discovery Grant</b> awarded to Professor Paul Ralph (PI). I helped develop the proposal and research design.</p></li>
+      <li><time datetime="2026">2026</time><p><b>Program committee</b> for the ICSE 2027 Software Engineering in Society track.</p></li>
+      <li><time datetime="2025-09">Sep 2025</time><p><b>SPAR AI Safety Research Fellow</b>, working with an international team on AI evaluation methods.</p></li>
+      <li><time datetime="2025-08">Aug 2025</time><p><b>Digital Discovery Camp.</b> Digital Nova Scotia invited me to lead a Python and chatbot workshop for young people in Halifax. <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7359244464428654594/">See the feature</a></p></li>
+      <li><time datetime="2025">2025</time><p><b>Three-Minute Thesis.</b> I competed at Dalhousie with a talk on the social costs of our digital world.</p></li>
+      <li><time datetime="2024-03">Mar 2024</time><p><b>OpenThink 2024 cohort.</b> I was one of 16 Dalhousie PhD students selected to share research with communities beyond the university. <a href="https://www.dal.ca/news/2024/03/08/dalhousie-openthink-2024.html">Read the announcement</a></p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- BACKGROUND (tabs) -->
+<section class="block alt" id="background">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Background</div>
+        <h2>Experience, teaching and education</h2>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Background">
+      <button role="tab" id="t-exp" aria-controls="p-exp" aria-selected="true">Experience</button>
+      <button role="tab" id="t-teach" aria-controls="p-teach" aria-selected="false" tabindex="-1">Teaching</button>
+      <button role="tab" id="t-talks" aria-controls="p-talks" aria-selected="false" tabindex="-1">Talks</button>
+      <button role="tab" id="t-service" aria-controls="p-service" aria-selected="false" tabindex="-1">Service</button>
+      <button role="tab" id="t-skills" aria-controls="p-skills" aria-selected="false" tabindex="-1">Skills</button>
+      <button role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false" tabindex="-1">Education</button>
+    </div>
+
+    <div class="panel" id="p-exp" role="tabpanel" aria-labelledby="t-exp">
+      <ul class="rows">
+        <li><span class="when">2022–2026</span><div><h3>Doctoral Researcher</h3><div class="org">Dalhousie Software Engineering Lab</div><p>Led a four-year research program on social sustainability in software engineering, from study design and ethics approval to statistical analysis and publication. Brought in industry partners so that professional engineers took part in the experiments.</p></div></li>
+        <li><span class="when">2025–2026</span><div><h3>AI Safety Research Fellow</h3><div class="org">Supervised Program for Alignment Research (SPAR)</div><p>Worked with an international team on how AI evaluation studies are designed and reported. Co-wrote guidelines for randomized controlled trials in AI evaluation.</p></div></li>
+        <li><span class="when">2026–now</span><div><h3>Senior Software Engineer, AI Evaluation</h3><div class="org">Alignerr by Labelbox</div><p>Design evaluation tasks and grading criteria for AI coding agents working in real codebases. Judge their output for correctness, reliability, code quality and safety.</p></div></li>
+        <li><span class="when">2023–2026</span><div><h3>Research Assistant, equity in STEM</h3><div class="org">RBC Securing Black Futures Project · Black Epistemologies Project, University of Calgary</div><p>Designed surveys and interviews and analyzed data on the barriers Black students face in STEM education and careers in Nova Scotia.</p></div></li>
+        <li><span class="when">2014–2021</span><div><h3>Technical Project Manager and Software Engineer</h3><div class="org">Longbridge Technologies, Code Garage Africa, Wellviser, Gen Financial</div><p>Led software projects in fintech, health and education from requirements to deployment. Built backend services and APIs with Agile teams and mentored junior developers.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="panel" id="p-teach" role="tabpanel" aria-labelledby="t-teach" hidden>
+      <ul class="rows">
+        <li><span class="when">2024</span><span class="what"><b>Instructor, CSCI 2691/3691/4691 Project courses.</b> Two offerings, 186 students, client-based team projects. Student rating 4.47 out of 5 (department 4.36).</span></li>
+        <li><span class="when">2023</span><span class="what"><b>Instructor, CSCI 2202 Introduction to Programming for Scientists.</b> 53 students. Student rating 4.49 out of 5 (department 4.22).</span></li>
+        <li><span class="when">2026</span><span class="what"><b>Guest lecture</b>, SENG 401 Software Architecture, University of Calgary, 145 students.</span></li>
+        <li><span class="when">2025–2026</span><span class="what"><b>Head Teaching Assistant</b> for the project courses. Led five TAs and helped redesign assessments and grading rubrics.</span></li>
+        <li><span class="when">2022–2026</span><span class="what"><b>Teaching Assistant</b> in ten courses, including Software Engineering and Research Methods and Statistics.</span></li>
+        <li><span class="when">2022–2026</span><span class="what"><b>Research mentoring.</b> Co-supervised an NSERC undergraduate research student and mentored two other student researchers.</span></li>
+        <li><span class="when">2026</span><span class="what"><b>Faculty Certificate in Teaching and Learning</b>, Dalhousie Centre for Learning and Teaching.</span></li>
+      </ul>
+    </div>
+
+    <div class="panel" id="p-talks" role="tabpanel" aria-labelledby="t-talks" hidden>
+      <ul class="rows">
+        <li><span class="when">2026</span><span class="what"><b>Advancing Evidence-Based Social Sustainability in Software Engineering: A Research Roadmap.</b> FSE, Montreal.</span></li>
+        <li><span class="when">2025</span><span class="what"><b>Towards Promoting Social Sustainability in Software Development.</b> Killam Trusts Annual Celebration, Dalhousie University. Invited.</span></li>
+        <li><span class="when">2025</span><span class="what"><b>User Personas Improve Social Sustainability.</b> ICSE, Ottawa, and CSER, Halifax.</span></li>
+        <li><span class="when">2025</span><span class="what"><b>Panelist, Automated Software Testing for Sustainability and Resource Efficiency.</b> AST 2025, Ottawa. Invited.</span></li>
+        <li><span class="when">2025</span><span class="what"><b>Addressing the Social Costs of Our Digital World in Software Development.</b> Three-Minute Thesis, Dalhousie University.</span></li>
+        <li><span class="when">2023</span><span class="what"><b>Sustainability is Stratified.</b> ICSE, Melbourne. Also a doctoral symposium poster.</span></li>
+      </ul>
+    </div>
+
+    <div class="panel" id="p-service" role="tabpanel" aria-labelledby="t-service" hidden>
+      <div class="two">
+        <div>
+          <h4>Reviewing</h4>
+          <ul class="rows">
+            <li><span class="when">2026, 2027</span><span class="what">Program committee, ICSE Software Engineering in Society track.</span></li>
+            <li><span class="when">2026</span><span class="what">Program committee, QUATIC 2026.</span></li>
+            <li><span class="when">2025</span><span class="what">Program committee, SusMod 2025 and ComSciCon Flagship 2025. Session chair, AST 2025.</span></li>
+            <li><span class="when">Ongoing</span><span class="what">Journal reviewer, ACM TOSEM and Information and Software Technology.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul class="rows">
+            <li><span class="when">2021–now</span><span class="what"><b>Coding mentor</b>, Imhotep's Legacy Academy, for African Nova Scotian youth.</span></li>
+            <li><span class="when">2023–2025</span><span class="what"><b>Elected Women's Representative</b>, <a href="https://cscan-infocan.ca/student-and-postdoc/">CS-Can | Info-Can Student and Postdoc Advisory Committee</a>, representing computer science students and postdocs across Canada.</span></li>
+            <li><span class="when">2023–2025</span><span class="what"><b>Founder</b>, Graduate Women in Research Journaling Club.</span></li>
+            <li><span class="when">2024–2025</span><span class="what"><b>Director of Science and Computer Science</b>, Dalhousie Organization of Graduate Students.</span></li>
+          </ul>
         </div>
       </div>
+    </div>
+
+    <div class="panel" id="p-skills" role="tabpanel" aria-labelledby="t-skills" hidden>
+      <dl class="skills">
+        <dt>Research methods</dt>
+        <dd><span>Randomized controlled experiments</span><span>AI evaluation</span><span>Experimental design</span><span>Mixed methods</span><span>Survey and interview design</span><span>Qualitative analysis</span><span>Research ethics</span></dd>
+        <dt>Statistics</dt>
+        <dd><span>Ordinal logistic regression</span><span>Cumulative link mixed models</span><span>Mixed-effects models</span><span>ANOVA</span></dd>
+        <dt>Domains</dt>
+        <dd><span>AI safety</span><span>Responsible AI</span><span>Social sustainability in software engineering</span><span>Empirical software engineering</span><span>AI ethics and governance</span><span>Sociotechnical systems</span></dd>
+        <dt>Languages and tools</dt>
+        <dd><span>Python</span><span>R</span><span>Java</span><span>JavaScript and TypeScript</span><span>React</span><span>Inspect AI</span><span>PyRIT</span><span>Hugging Face</span><span>Docker</span><span>Git</span><span>LaTeX</span><span>Qualtrics</span><span>NVivo</span></dd>
+        <dt>Communication</dt>
+        <dd><span>Research writing</span><span>Policy writing</span><span>Public speaking</span><span>Science communication</span><span>Stakeholder engagement</span></dd>
+      </dl>
+    </div>
+
+    <div class="panel" id="p-edu" role="tabpanel" aria-labelledby="t-edu" hidden>
+      <ul class="rows">
+        <li><span class="when">2022–2026</span><span class="what"><b>PhD, Computer Science</b>, Dalhousie University. Advisor: Professor Paul Ralph.</span></li>
+        <li><span class="when">2021–2022</span><span class="what"><b>Master of Computer Science</b>, Dalhousie University.</span></li>
+        <li><span class="when">2010–2015</span><span class="what"><b>BTech, Computer Science</b>, Federal University of Technology, Akure. Best graduating student in the department.</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ─── AWARDS ─── -->
-<section class="section-wrap dark" id="awards">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Recognition</div>
-      <h2 class="section-heading light">Awards &amp; Grants</h2>
+<!-- AWARDS -->
+<section class="awards" id="awards">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Awards and funding</div>
+        <h2>$186,000 in competitive doctoral funding</h2>
+        <p>The Killam Predoctoral Award and the Nova Scotia Graduate Scholarship funded my doctoral research. I also received fellowships, scholarships and travel awards.</p>
+      </div>
     </div>
-    <div class="awards-grid">
-      <div class="award-card reveal">
-        <div class="award-star">🏆</div>
-        <div>
-          <h4>Killam Doctoral Award</h4>
-          <p>Prestigious award recognizing academic excellence — given to only the top PhD students across five Canadian universities. 2023 – 2026.</p>
-        </div>
-      </div>
-      <div class="award-card reveal reveal-delay-1">
-        <div class="award-star">🎓</div>
-        <div>
-          <h4>Nova Scotia Graduate Scholarship</h4>
-          <p>Provincial award for academic excellence at the doctoral level. 2022 – 2026.</p>
-        </div>
-      </div>
-      <div class="award-card reveal">
-        <div class="award-star">💡</div>
-        <div>
-          <h4>OpenThink Scholarship</h4>
-          <p>Selected as one of 16 university-wide doctoral scholars for Dalhousie's 2024 cohort focused on public engagement and science communication.</p>
-        </div>
-      </div>
-      <div class="award-card reveal reveal-delay-1">
-        <div class="award-star">🎙️</div>
-        <div>
-          <h4>ComSciCon-Flagship Award</h4>
-          <p>Selected for the 2024 National Science Communication Fellowship in Boston, MA, USA — fully funded.</p>
-        </div>
-      </div>
-      <div class="award-card reveal">
-        <div class="award-star">⚡</div>
-        <div>
-          <h4>Ada Byron Award</h4>
-          <p>Dalhousie Faculty of Computer Science — recognized for academic excellence and significant contributions promoting women in computing. 2023.</p>
-        </div>
-      </div>
 
-      <div class="award-card reveal reveal-delay-1">
-        <div class="award-star">📄</div>
-        <div>
-          <h4>ACM SIGSOFT CAPS Grant</h4>
-          <p>Conference support grants awarded for ICSE 2025 and ICSE 2026.</p>
-        </div>
+    <div class="big-awards">
+      <div class="award">
+        <div class="amt">$126,000<small>CAD</small></div>
+        <h3>Killam Predoctoral Award</h3>
+        <div class="src">Killam Trusts</div>
+        <p>One of Canada's most prestigious doctoral awards. It recognizes academic and research excellence and is offered competitively across five Canadian universities.</p>
+        <div class="yr">2023–2026</div>
       </div>
-      <div class="award-card reveal">
-        <div class="award-star">🏅</div>
-        <div>
-          <h4>Halifax Innovation Challenge Winner</h4>
-          <p>IBM + RBC, 2021. </p>
-        </div>
+      <div class="award">
+        <div class="amt">$60,000<small>CAD</small></div>
+        <h3>Nova Scotia Graduate Scholarship</h3>
+        <div class="src">Province of Nova Scotia</div>
+        <p>Awarded for academic excellence at the doctoral level.</p>
+        <div class="yr">2022–2026</div>
       </div>
-      <div class="award-card reveal reveal-delay-1">
-        <div class="award-star">🎖️</div>
-        <div>
-          <h4>First Bank Cash Award</h4>
-          <p>Best graduating student in the Department of Computer Science, FUTA.</p>
+    </div>
+
+    <div class="small-awards">
+      <div class="award">
+        <div class="amt word">Fellowship</div>
+        <h3>AI Safety Research Fellowship</h3>
+        <div class="src">Supervised Program for Alignment Research (SPAR)</div>
+        <p>Selected through a competitive process for a three-month AI safety research program.</p>
+        <div class="yr">2025–2026</div>
       </div>
-      
-   
+      <div class="award">
+        <div class="amt">$3,000<small>CAD</small></div>
+        <h3>OpenThink Scholarship</h3>
+        <div class="src">Dalhousie University</div>
+        <p>One of 16 doctoral students selected for training in policy and media writing on AI ethics, digital inequality and sustainability.</p>
+        <div class="yr">2024</div>
+      </div>
+      <div class="award">
+        <div class="amt">$3,000<small>CAD</small></div>
+        <h3>Ada Byron Award</h3>
+        <div class="src">Dalhousie Faculty of Computer Science</div>
+        <p>Recognizes academic excellence and contributions to women in computing.</p>
+        <div class="yr">2023</div>
+      </div>
+      <div class="award">
+        <div class="amt">$1,800<small>USD</small></div>
+        <h3>ACM SIGSOFT CAPS Award, twice</h3>
+        <div class="src">ACM SIGSOFT</div>
+        <p>Travel support to present at ICSE 2025 in Ottawa and ICSE 2026.</p>
+        <div class="yr">2025, 2026</div>
+      </div>
+      <div class="award">
+        <div class="amt">$500<small>USD</small></div>
+        <h3>ComSciCon Flagship Award</h3>
+        <div class="src">ComSciCon</div>
+        <p>Selected for the national science communication workshop for graduate students.</p>
+        <div class="yr">2024</div>
+      </div>
+      <div class="award">
+        <div class="amt">$700<small>CAD</small></div>
+        <h3>Winner, Halifax Innovation Challenge</h3>
+        <div class="src">IBM and RBC</div>
+        <p>Won the challenge, run by IBM and RBC in Halifax.</p>
+        <div class="yr">2021</div>
+      </div>
+    </div>
+
+    <ul class="also">
+      <li><b>Entrance award</b> Dalhousie Graduate Scholarship <span>2022</span></li>
+      <li><b>Grant</b> Dalhousie Conference on University Teaching and Learning <span>2025</span></li>
+    </ul>
+  </div>
 </section>
 
-<!-- ─── COMMUNITY ─── -->
-<section class="section-wrap" id="community">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-tag">Leadership &amp; Outreach</div>
-      <h2 class="section-heading">Giving back to the community</h2>
-      <p class="section-sub">Service work across research, advocacy, and outreach — from program committees at top venues to hands-on work with young people in STEM.</p>
+<!-- WRITING -->
+<section class="block alt" id="writing">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Writing</div>
+        <h2>Research for a public audience</h2>
+        <p>As a 2024 OpenThink Scholar at Dalhousie, I wrote a blog series on software, sustainability and the people technology can leave behind. Here are three to start with.</p>
+      </div>
     </div>
-    <div class="community-grid">
 
-      <div class="community-card reveal">
-        <div class="community-icon">🌍</div>
-        <h4>Women's Representative, CS-Can | Info-Can</h4>
-        <p>Elected to represent women in computing across 60+ Canadian universities on the Student & Postdoc Advisory Committee, contributing to policy and inclusivity.</p>
-        <div class="community-date">Jan 2022 – 2025</div>
-      </div>
+    <div class="post-grid">
+      <article class="card">
+        <a class="cover" href="https://blogs.dal.ca/openthink/code-with-a-conscience-pioneering-the-path-to-socially-sustainable-technology/">
+          <div class="media wide"><img src="writing/code-with-a-conscience.jpg" alt="" loading="lazy" /><span class="tag">Start here</span></div>
+        </a>
+        <div class="body">
+          <time datetime="2024-03-08">March 2024</time>
+          <h3><a href="https://blogs.dal.ca/openthink/code-with-a-conscience-pioneering-the-path-to-socially-sustainable-technology/">Code with a Conscience: Pioneering the Path to Socially Sustainable Technology</a></h3>
+          <p>Why equity, inclusion and well-being deserve as much attention in software as performance and energy use.</p>
+          <a class="more" href="https://blogs.dal.ca/openthink/code-with-a-conscience-pioneering-the-path-to-socially-sustainable-technology/">Read more</a>
+        </div>
+      </article>
 
-      <div class="community-card reveal reveal-delay-1">
-          <div class="community-icon">📣</div>
-        <h4>Program Committee, ICSE 2026 & 2027</h4>
-        <p>Serving on the Program Committee for the Software Engineering in Society track at ICSE 2026, the premier conference in software engineering.</p>
-        <div class="community-date">ICSE 2026</div>
-      </div>
+      <article class="card">
+        <a class="cover" href="https://blogs.dal.ca/openthink/is-your-software-socially-sustainable-heres-how-to-find-out/">
+          <div class="media wide"><img src="writing/is-your-software-socially-sustainable.jpg" alt="" loading="lazy" /><span class="tag">Practical guide</span></div>
+        </a>
+        <div class="body">
+          <time datetime="2024-10-01">October 2024</time>
+          <h3><a href="https://blogs.dal.ca/openthink/is-your-software-socially-sustainable-heres-how-to-find-out/">Is Your Software Socially Sustainable? Here's How to Find Out!</a></h3>
+          <p>Five signs to check in your own product, from equitable access and user well-being to ethical data practices.</p>
+          <a class="more" href="https://blogs.dal.ca/openthink/is-your-software-socially-sustainable-heres-how-to-find-out/">Read more</a>
+        </div>
+      </article>
 
-      <div class="community-card reveal reveal-delay-2">
-        <div class="community-icon">💻</div>
-        <h4>Coding Mentor, Imhotep's Legacy Academy</h4>
-        <p>Teaching Python and HTML to African Nova Scotian youth (ages 10–17), creating accessible materials to foster confidence in STEM.</p>
-        <div class="community-date">Sep 2021 – Present</div>
-      </div>
+      <article class="card">
+        <a class="cover" href="https://blogs.dal.ca/openthink/making-the-case-for-academia-industry-partnerships-in-software-sustainability-research/">
+          <div class="media wide"><img src="writing/academia-industry-partnerships.jpg" alt="" loading="lazy" /><span class="tag">Research and practice</span></div>
+        </a>
+        <div class="body">
+          <time datetime="2024-11-12">November 2024</time>
+          <h3><a href="https://blogs.dal.ca/openthink/making-the-case-for-academia-industry-partnerships-in-software-sustainability-research/">Making the Case for Academia-Industry Partnerships in Software Sustainability Research</a></h3>
+          <p>Researchers propose ideas and industry puts them to the test. Why social sustainability needs both sides at the table.</p>
+          <a class="more" href="https://blogs.dal.ca/openthink/making-the-case-for-academia-industry-partnerships-in-software-sustainability-research/">Read more</a>
+        </div>
+      </article>
+    </div>
 
-      <div class="community-card reveal">
-       <div class="community-icon">🎓</div>
-        <h4>Director of Science &amp; CS</h4>
-        <p>Served as the Director of Science and Computer Science at the Dalhousie Organization of Graduate Students, advocating for graduate student interests.</p>
-        <div class="community-date">June 2024 – Jan 2026</div>
-      </div>
-
-      <div class="community-card reveal reveal-delay-1">
-        <div class="community-icon">🖥️</div>
-        <h4>Workshop Leader, Digital Discovery Camp</h4>
-        <p>Invited by Digital Nova Scotia to lead a hands-on Python and chatbot development workshop at the Discovery Centre, Halifax. Featured in a Digital Nova Scotia LinkedIn spotlight.</p>
-        <div class="community-date">August 2025</div>
-      </div>
-
-      <div class="community-card reveal reveal-delay-2">
-        <div class="community-icon">🔬</div>
-        <h4>Judge, Canadian Black Scientist Network</h4>
-        <p>Judged and mentored student projects in the technology category at the annual Science Fair — three consecutive years.</p>
-        <div class="community-date">2022, 2023, 2024</div>
-      </div>
-
-      <div class="community-card reveal">
-        <div class="community-icon">🤖</div>
-        <h4>Hackathon Participant — Black Youth in AI</h4>
-        <p>Participated in the Tribe Network Black Youth in AI hackathon, building an AI assisted healthcare companion app for caregviers.</p>
-        <div class="community-date">2026</div>
-      </div>
-      
+    <div class="read-all">
+      <a class="btn btn-dark" href="https://blogs.dal.ca/openthink/author/bimpeayoola/">Read all my OpenThink posts</a>
     </div>
   </div>
 </section>
 
-<!-- ─── CONTACT ─── -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="section-tag" style="justify-content:center; margin-bottom:16px;">Let's Connect</div>
-    <h2>Have an idea?<br/><em>Let's talk.</em></h2>
-    <p>Whether it's a research collaboration, speaking invitation, mentorship, or just a conversation about building software that works equitably for people, I'd love to hear from you.</p>
-    <div class="contact-links">
-      <a href="mailto:bimpe.ayoola@dal.ca" class="contact-link teal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email Me
-      </a>
-      <a href="https://www.linkedin.com/in/bimpe-ayoola-61939455/" target="_blank" class="contact-link outline">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&hl=en&oi=ao" target="_blank" class="contact-link outline">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Google Scholar
-      </a>
+</main>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let's work on this together.</h2>
+      <p>If you work on responsible AI, socially sustainable software or AI safety and evaluation, I would love to hear from you. I am open to collaborations, talks and new opportunities.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-solid" href="mailto:bimpeayoolac@gmail.com">Email me</a>
+      <a class="btn btn-line" href="https://www.linkedin.com/in/bimpe-ayoola-phd-61939455/">LinkedIn</a>
+      <a class="btn btn-line" href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&amp;hl=en">Google Scholar</a>
     </div>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
 <footer>
-  <span>© 2026 Bimpe Ayoola · Halifax, Canada</span>
-  <div class="footer-links">
-    <a href="mailto:bimpe.ayoola@dal.ca">Email</a>
-    <a href="https://www.linkedin.com/in/bimpe-ayoola-61939455/" target="_blank">LinkedIn</a>
-    <a href="https://scholar.google.ca/citations?user=7cDyYSUAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+  <div class="wrap">
+    <span>© 2026 Bimpe Ayoola · Halifax, Nova Scotia</span>
+    <a href="mailto:bimpeayoolac@gmail.com">bimpeayoolac@gmail.com</a>
   </div>
 </footer>
 
 <script>
-  // Navbar scroll behavior
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+  // Accessible tabs for the Background section
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!n) return;
+        var next = tabs[(i + n + tabs.length) % tabs.length];
+        select(next); next.focus();
+      });
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
 </script>
 </body>
 </html>
