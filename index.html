@@ -61,6 +61,8 @@
     .top nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; white-space: nowrap; }
     .top nav a:hover { color: var(--accent); }
 
+    section[id] { scroll-margin-top: 64px; }
+
     /* Intro */
     .hero { padding: 64px 0 56px; border-bottom: 1px solid var(--rule); }
     .hero .wrap { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
@@ -219,10 +221,17 @@
     @media (max-width: 640px) {
       body { font-size: 16px; }
       .wrap { padding: 0 16px; }
-      .top nav { display: none; }
+      .top .wrap { flex-direction: column; align-items: stretch; gap: 0; height: auto; padding-top: 10px; }
+      .top nav { gap: 20px; overflow-x: auto; scrollbar-width: none; padding: 6px 0 10px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+      .top nav::-webkit-scrollbar { display: none; }
+      .top nav a { font-size: 14.5px; }
+      section[id] { scroll-margin-top: 92px; }
       .hero { padding: 32px 0 44px; }
       .hero .wrap { grid-template-columns: 1fr; gap: 24px; }
-      .portrait { max-width: 220px; }
+      .portrait { max-width: none; display: grid; grid-template-columns: 84px 1fr; gap: 14px; align-items: center; padding: 10px; }
+      .portrait img { aspect-ratio: 1 / 1; height: auto; object-position: 50% 15%; }
+      .portrait figcaption { padding: 0; }
+      .portrait .links { margin-top: 4px; }
       .hero h1 { font-size: 29px; }
       .hero .intro { font-size: 17px; }
       section.block, .awards { padding: 52px 0; }
